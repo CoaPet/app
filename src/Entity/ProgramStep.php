@@ -68,6 +68,7 @@ class ProgramStep
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank(message="Veuillez indiquez le déclenchement de cette étape.")
      * @Assert\Range(min=0)
      */
     private $begin;
