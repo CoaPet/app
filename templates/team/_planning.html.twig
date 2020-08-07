@@ -1,28 +1,59 @@
 <div class="planning row col-md-10 mx-auto my-5">
-    <div class="col-1 d-flex flex-column px-0">
-        <div class="time">
+{#   <div class="col-1 d-flex flex-column px-0">
+        <div class="head">
         </div>
         {% for hourKey, hourLabel in hours %}
             {% if loop.index is odd %}
-            <div class="extends px-0 time text-left">
+            <div class="extends hour px-0 time text-left">
                 <p class="pl-1">{{ hourKey }}</p>
             </div>
             {% endif %}
         {% endfor %}
+    </div> #}
+    <div class="col-1 d-flex flex-column px-0">
+        <div class="head">
+        </div>
+        {% for hourKey, hourLabel in hours %}
+            {% if loop.index is odd %}
+                <div class="extends px-0 time text-right ">
+                    <div class="hour pl-1 position-relative one-11"><p class="mx-auto w-50 text-center bg-white">{{ hourKey }}</p></div>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
+
     {% for day in days %}
         <div class="col-2 d-flex flex-column bg-secondary-transparent mx-0 px-1 border border-primary">
-            <div class="fs-2 text-center">{{ day|capitalize }}</div>
+            <div class="head fs-2 text-center">
+                {{ day|capitalize }}
+            </div>
             {% for cours in visualPlanning %}
                 {% if cours.day == day %}
-                <div style="top: calc(2vw + (4vw * ({{ cours.hour }} - 8))); height: calc(4vw * {{ cours.duration }})"
-                     class="fs-2 cours_planning d-flex border border-secondary position-absolute bg-primary text-secondary text-center">
-                    <p class="m-auto ">{{ cours.activity|upper }}</p>
-                </div>
+                    {% if app.request.pathInfo == path('planning_index') %}
+                    <a href="{{ path('planning_edit', {'id': cours.id}) }}" ="Modifier">
+                    {% endif %}
+                        <div style="top: calc(3vw + (4vw * ({{ cours.hour }} - 8))); height: calc(4vw * {{ cours.duration }})"
+                             class="fs-2 cours_planning d-flex position-absolute text-center">
+                            <p class="m-auto ">
+                                {{ cours.activity|upper }}
+                            </p>
+                        </div>
+                    {% if app.request.pathInfo == path('planning_index') %}
+                    </a>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
     {% endfor %}
-    <div class="col-1 d-flex flex-column">
+    <div class="col-1 d-flex flex-column px-0">
+        <div class="head">
+        </div>
+        {% for hourKey, hourLabel in hours %}
+            {% if loop.index is odd %}
+                <div class="extends-r w-100 px-0 time align-self-end text-right ">
+                    <div class="hour pl-1 position-relative align-content-center"><p class="mx-auto w-50 text-center bg-white">{{ hourKey }}</p></div>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>

@@ -13,15 +13,18 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("admin/planning")
  */
-class PlanningController extends AbstractController
+class AdminPlanningController extends AbstractController
 {
     /**
      * @Route("/", name="planning_index", methods={"GET"})
      */
     public function index(PlanningRepository $planningRepository): Response
     {
-        return $this->render('planning/index.html.twig', [
-            'plannings' => $planningRepository->findAll(),
+        $dataPlanning = new Planning();
+        return $this->render('admin_planning/index.html.twig', [
+            'visualPlanning' => $planningRepository->findAll(),
+            'hours' => $dataPlanning::HOURS,
+            'days' => $dataPlanning::DAYS,
         ]);
     }
 
@@ -48,7 +51,7 @@ class PlanningController extends AbstractController
             return $this->redirectToRoute('planning_index');
         }
 
-        return $this->render('planning/new.html.twig', [
+        return $this->render('admin_planning/new.html.twig', [
             'planning' => $planning,
             'form' => $form->createView(),
             'visualPlanning' => $visualPlanning,
@@ -62,7 +65,7 @@ class PlanningController extends AbstractController
      */
     public function show(Planning $planning): Response
     {
-        return $this->render('planning/show.html.twig', [
+        return $this->render('admin_planning/show.html.twig', [
             'planning' => $planning,
         ]);
     }
@@ -81,7 +84,7 @@ class PlanningController extends AbstractController
             return $this->redirectToRoute('planning_index');
         }
 
-        return $this->render('planning/edit.html.twig', [
+        return $this->render('admin_planning/edit.html.twig', [
             'planning' => $planning,
             'form' => $form->createView(),
         ]);

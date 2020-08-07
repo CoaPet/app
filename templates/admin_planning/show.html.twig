@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Planning{% endblock %}
 
 {% block body %}
-    <h1>Planning</h1>
+    <h1 class="text-primary text-center">Planning</h1>
 
     <table class="table">
         <tbody>
@@ -34,5 +34,5 @@
 
     <a href="{{ path('planning_edit', {'id': planning.id}) }}">edit</a>
 
-    {{ include('planning/_delete_form.html.twig') }}
+    {{ include('admin_planning/_delete_form.html.twig') }}
 {% endblock %}
