@@ -30,6 +30,12 @@ class PlanningController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $dataPlanning = new planning;
+
+        $visualPlanning = $this->getDoctrine()
+            ->getRepository(Planning::class)
+            ->findAll();
+
         $planning = new Planning();
         $form = $this->createForm(PlanningType::class, $planning);
         $form->handleRequest($request);
@@ -45,6 +51,9 @@ class PlanningController extends AbstractController
         return $this->render('planning/new.html.twig', [
             'planning' => $planning,
             'form' => $form->createView(),
+            'visualPlanning' => $visualPlanning,
+            'hours' => $dataPlanning::HOURS,
+            'days' => $dataPlanning::DAYS,
         ]);
     }
 

@@ -1,20 +1,22 @@
 @import "vars";
-@import "navbar";
-@import "before_after";
-@import "actuality";
-@import "activity";
-@import "footer";
-@import "map";
 @import "~bootstrap/scss/bootstrap";
-@import "_about_me.scss";
-@import "form";
-@import "whoami.scss";
-@import "faq";
+
+@import "about_me";
+@import "activity";
+@import "actuality";
+@import "before_after";
 @import "blog";
-@import "transformations";
-@import "member";
 @import "coaching_team";
 @import "errorPages";
+@import "faq";
+@import "footer";
+@import "form";
+@import "map";
+@import "member";
+@import "navbar";
+@import "planning";
+@import "transformations";
+@import "whoami";
 
 body {
     width: 100vw;

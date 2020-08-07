@@ -1,0 +1,25 @@
+.planning {
+    font-size: 1vmin;
+    .time {
+        height: 2vw;
+        font-size: 2vmin;
+    }
+    .bg-secondary-transparent{
+        background-color: $secondary-transparent;
+    }
+    .fs-2{
+        font-size: 2vmin;
+    }
+    .cours_planning {
+        width: calc(100% - 10px);
+        border-radius: 2px;
+    }
+    .extends:hover {
+        background-color: $secondary-transparent;
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: $primary;
+        transition: 0.8s;
+        width: 1100%;
+    }
+}
