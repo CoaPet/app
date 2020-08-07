@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1 class="text-primary text-center">Planning</h1>
-<div class="text-right">
+<div class="text-center">
     <a class="btn btn-light text-primary border-primary mx-2" href="{{ path('planning_new') }}">
         Ajout
         <svg class="bi bi-plus-circle-fill" width="24px" height="24px" viewBox="0 0 16 16" fill="#00384f" xmlns="http://www.w3.org/2000/svg">
@@ -12,6 +12,7 @@
         </svg>
     </a>
 </div>
+
 {%  include('team/_planning.html.twig') %}
 
 {% endblock %}
