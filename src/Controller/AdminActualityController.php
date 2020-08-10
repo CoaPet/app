@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @Route("/admin/actualite")
@@ -19,10 +20,20 @@ class AdminActualityController extends AbstractController
     /**
      * @Route("/", name="actuality_index", methods={"GET"})
      */
-    public function index(ActualityRepository $actualityRepository): Response
-    {
+    public function index(
+        ActualityRepository $actualityRepository,
+        Request $request,
+        PaginatorInterface $paginator
+    ): Response {
+        $articles = $actualityRepository->findBy([], ['date' => 'DESC']);
+        $pageArticles = $paginator->paginate(
+            $articles,
+            $request->query->getInt('page', 1),
+            4
+        );
+
         return $this->render('admin_actuality/index.html.twig', [
-            'actualities' => $actualityRepository->findBy([], ['date' => 'DESC']),
+            'actualities' => $pageArticles,
         ]);
     }
 
