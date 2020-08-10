@@ -76,42 +76,64 @@
                         </svg>
                     </button>
                     <div class="collapse navbar-collapse text-right pr-3 justify-content-end" id="navbarNav">
-                        {% set items = {
-                            'Qui-suis-je': path('whoiam_index'),
-                            'Transformations': path('transformations'),
-                            'Actualités': path('app_actuality'),
-                            'Contact':path('app_contact'),
-                        }
-                        %}
-
                         <ul class="navbar-nav mr-0">
 
                             {% if is_granted('ROLE_MEMBER') %}
-                                <li class="nav-item">
-                                    <a class="nav-link text-light {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">Espace
+                                <li class="nav-item py-2 px-1">
+                                    <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">Espace
                                         Membre</a>
                                 </li>
                             {% endif %}
-                            <li class="nav-item nav-link dropdown py-2 mr-1 {{ (app.request.pathInfo==path('app_coaching') or app.request.pathInfo==path('index_team_traing')) ? 'active navbar-focus' : 'navbar-link' }}">
+
+                            <li class="nav-item py-2 px-1">
+                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('whoiam_index') ? 'active navbar-focus' : 'navbar-link' }} p-0" href="{{ path('whoiam_index') }}">
+                                    Qui suis-je
+                                    {% if app.request.pathInfo == path('whoiam_index') %}
+                                        <span class="sr-only">(current)</span>
+                                    {% endif %}
+                                </a>
+                            </li>
+
+                            <li class="nav-item nav-link dropdown py-2 px-1 mr-1 {{ (app.request.pathInfo==path('app_coaching') or app.request.pathInfo==path('index_team_traing')) ? 'active navbar-focus' : 'navbar-link' }}">
                                 <a class="a-propos dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Activité
+                                    {% if app.request.pathInfo == path('app_coaching') %}
+                                        <span class="sr-only">(current)</span>
+                                    {% endif %}
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="ss-menu-activities dropdown-menu text-right " aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item text-primary" href="{{ path('app_coaching') }}">Coaching</a>
                                     <a class="dropdown-item text-primary" href="{{ path('index_team_traing') }}">Team Training</a>
                                     <a class="dropdown-item text-primary" href="{{ path('index_team_traing') }}">A distance</a>
                                 </div>
                             </li>
-                            {% for itemLabel, itemRoute in items %}
-                            <li class="nav-item py-2 pl-2 ">
-                                <a class="nav-item text-light text-decoration-none {{ itemRoute==app.request.pathInfo ? 'active navbar-focus' : 'navbar-link' }}" href="{{ itemRoute }}">
-                                    {{ itemLabel }}
-                                    {% if itemRoute == app.request.pathInfo %}
+
+                            <li class="nav-item py-2 px-1">
+                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('transformations') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('transformations') }}">
+                                    Transformations
+                                    {% if app.request.pathInfo == path('transformations') %}
                                         <span class="sr-only">(current)</span>
                                     {% endif %}
                                 </a>
                             </li>
-                        {% endfor %}
+
+                            <li class="nav-item py-2 px-1">
+                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('app_actuality') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_actuality') }}">
+                                    Actualité
+                                    {% if app.request.pathInfo == path('app_actuality') %}
+                                        <span class="sr-only">(current)</span>
+                                    {% endif %}
+                                </a>
+                            </li>
+
+                            <li class="nav-item py-2 px-1">
+                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('app_contact') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_contact') }}">
+                                    Contact
+                                    {% if app.request.pathInfo == path('app_contact') %}
+                                        <span class="sr-only">(current)</span>
+                                    {% endif %}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
