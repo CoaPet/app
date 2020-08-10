@@ -56,7 +56,7 @@
         {# Fin bande supérieure#}
         {# Debut bande inférieure (Logo + liens de navigation) #}
         <div class="w-100 d-flex flex-wrap justify-content-between border-top border-light">
-            <div >
+            <div class="col-md-6" >
                 <a class="navbar-brand" href="{{ path('app_index') }}">
                     <img class="" src="{{ asset('build/peter_logo_white.png') }}" alt="logo coach Peter">
                 </a>
@@ -76,20 +76,29 @@
                         {% set items = {
                             'Qui-suis-je': path('whoiam_index'),
                             'Transformations': path('transformations'),
-                            'Coaching': path('app_coaching'),
-                            'Team training': path('index_team_traing'),
                             'Actualités': path('app_actuality'),
                             'Contact':path('app_contact'),
                         }
                         %}
 
                         <ul class="navbar-nav mr-0">
+
                             {% if is_granted('ROLE_MEMBER') %}
                                 <li class="nav-item">
                                     <a class="nav-link text-light {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">Espace
                                         Membre</a>
                                 </li>
                             {% endif %}
+                            <li class="nav-item nav-link dropdown py-2 mr-1 {{ (app.request.pathInfo==path('app_coaching') or app.request.pathInfo==path('index_team_traing')) ? 'active navbar-focus' : 'navbar-link' }}">
+                                <a class="a-propos dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Activité
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item text-primary" href="{{ path('app_coaching') }}">Coaching</a>
+                                    <a class="dropdown-item text-primary" href="{{ path('index_team_traing') }}">Team Training</a>
+                                    <a class="dropdown-item text-primary" href="{{ path('index_team_traing') }}">A distance</a>
+                                </div>
+                            </li>
                             {% for itemLabel, itemRoute in items %}
                             <li class="nav-item py-2 pl-2 ">
                                 <a class="nav-item text-light text-decoration-none {{ itemRoute==app.request.pathInfo ? 'active navbar-focus' : 'navbar-link' }}" href="{{ itemRoute }}">
