@@ -27,6 +27,8 @@ header .container-banner{
     height: $h-band;
 }
 
+
+
 .bluehover {
     top: 0;
     left: 0;
@@ -92,7 +94,12 @@ header {
     .nav a {
         color: $light;
     }
+
+    .ss-menu-activities{
+        left: -75px;
+    }
 }
+
 
 @media screen and (max-width: 500px) {
 
