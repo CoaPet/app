@@ -1,4 +1,7 @@
-<header class="w-100 top-img d-flex justify-content-center">
+<header class="w-100 top-img d-flex justify-content-center overflow-hidden">
+    <div class="img_bg_navbar position-absolute align-content-center overflow-hidden w-100">
+        <img src="{{ asset('build/header_sportif_lacets.jpg') }}" alt="image de fond" class="min-vw-100">
+    </div>
     <div class="bluehover position-relative"></div>
 
     <div class="col-12 col-xl-8 container-banner position-absolute ">
@@ -6,13 +9,13 @@
         <div class="px-0 supnavbar col-12 d-flex flex-column flex-md-row mt-3">
             <div class="px-0 col-md-6 infoheader d-flex flex-row">
                 <div class="p-0 col-6 d-flex flex-row align-items-center">
-                    <img class="mx-1 d-flex flex-row" src="{{ asset('build/blue_location.svg') }}">
+                    <img class="mx-1 d-flex flex-row" src="{{ asset('build/blue_location.svg') }}" alt="picto_location">
                     <p>{{ coachInfo.adress ?? '' }}<br> {{ coachInfo.zipCode ?? '' }} {{ (coachInfo.city ?? '')|upper }}
                     </p>
                 </div>
                 <div class="col-6 px-0 d-flex ">
                     <div class="row align-items-center mx-auto">
-                        <img class="mx-1" src="{{ asset('build/blue_tel.svg') }}">
+                        <img class="mx-1" src="{{ asset('build/blue_tel.svg') }}" alt="picto_phone">
                         <p class="mt-3 text-right">{{ (coachInfo.phone ?? '')|formatPhoneFr }}</p>
                     </div>
                 </div>
@@ -56,12 +59,12 @@
         {# Fin bande supérieure#}
         {# Debut bande inférieure (Logo + liens de navigation) #}
         <div class="w-100 d-flex flex-wrap justify-content-between border-top border-light">
-            <div class="col-md-6" >
+            <div class="col-4">
                 <a class="navbar-brand" href="{{ path('app_index') }}">
                     <img class="" src="{{ asset('build/peter_logo_white.png') }}" alt="logo coach Peter">
                 </a>
             </div>
-            <div class="text-right align-content-end ml-auto">
+            <div style="left:20%; width: 80%" class=" text-right position-absolute">
                 <nav class="navbar navbar-expand-lg navbar-light border-top-0 justify-content-end">
                     <button class="navbar-toggler border-0 btn text-light align-right" type="button"
                             data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -72,7 +75,7 @@
                                   d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg>
                     </button>
-                    <div class="collapse navbar-collapse text-right bg-transparent" id="navbarNav">
+                    <div class="collapse navbar-collapse text-right pr-3 justify-content-end" id="navbarNav">
                         {% set items = {
                             'Qui-suis-je': path('whoiam_index'),
                             'Transformations': path('transformations'),
@@ -108,7 +111,7 @@
                                     {% endif %}
                                 </a>
                             </li>
-                            {% endfor %}
+                        {% endfor %}
                         </ul>
                     </div>
                 </nav>
