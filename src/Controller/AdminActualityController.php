@@ -29,7 +29,7 @@ class AdminActualityController extends AbstractController
         $pageArticles = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1),
-            4
+            5
         );
 
         return $this->render('admin_actuality/index.html.twig', [
