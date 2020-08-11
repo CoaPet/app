@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class ActivityType extends AbstractType
 {
@@ -31,9 +32,7 @@ class ActivityType extends AbstractType
                 'attr' => ['class' => "col-12"
                 ]])
 
-            ->add('description', TextareaType::class, [
-                'attr' => ['class' => "col-12 form-h-2 align-items-end"
-                ]])
+            ->add('description', CKEditorType::class, array('input_sync' => true))
 
             ->add('pictogram', ChoiceType::class, [
                 'choices' => self::PICTOGRAMS,
