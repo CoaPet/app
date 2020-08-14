@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Actuality;
 use App\Entity\InfoCoach;
+use App\Entity\Planning;
 use App\Entity\Degree;
 use App\Entity\Activity;
+use App\Repository\PlanningRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,6 +20,12 @@ class TeamTrainingController extends AbstractController
      */
     public function index() : Response
     {
+        $dataPlanning = new planning;
+
+        $visualPlanning = $this->getDoctrine()
+            ->getRepository(Planning::class)
+            ->findAll();
+
         $coachInfo = $this->getDoctrine()
             ->getRepository(InfoCoach::class)
             ->findOneBy([]);
@@ -29,7 +37,10 @@ class TeamTrainingController extends AbstractController
         return $this->render('team/index.html.twig', [
             'coachInfo' => $coachInfo,
             'activities' => $activities,
-            'title' => 'Team Training'
+            'title' => 'Team Training',
+            'visualPlanning' => $visualPlanning,
+            'hours' => $dataPlanning::HOURS,
+            'days' => $dataPlanning::DAYS,
         ]);
     }
 }

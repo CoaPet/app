@@ -1,0 +1,18 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Planning index{% endblock %}
+
+{% block body %}
+    <h1 class="text-primary text-center">Planning</h1>
+<div class="text-center">
+    <a class="btn btn-light text-primary border-primary mx-2" href="{{ path('planning_new') }}">
+        Ajout
+        <svg class="bi bi-plus-circle-fill" width="24px" height="24px" viewBox="0 0 16 16" fill="#00384f" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/>
+        </svg>
+    </a>
+</div>
+
+{%  include('team/_planning.html.twig') %}
+
+{% endblock %}
