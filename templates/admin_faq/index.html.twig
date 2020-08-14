@@ -27,8 +27,8 @@
         <tbody>
         {% for faq in faqs %}
             <tr class="row mx-0 px-0">
-                <td class="col-5">{{ faq.question }}</td>
-                <td class="col-5">{{ faq.answer }}</td>
+                <td class="col-5">{{ faq.question|raw }}</td>
+                <td class="col-5">{{ faq.answer|raw }}</td>
                 <td class="col-1">
                     <a class="" href="{{ path('faq_edit', {'id': faq.id}) }}">
                         <svg class="bi bi-pencil-square" width="24px" height="24px" viewBox="0 0 16 16"

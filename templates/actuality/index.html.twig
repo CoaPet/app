@@ -33,8 +33,10 @@
                                     </svg>
                                     {{ actuality.date|date('d M Y') }}
                                 </div>
+                                <div>
+                                    {{ actuality.content|raw }}
+                                </div>
                             </div>
-                            <p class="blog-content ml-0">{{ actuality.content|raw }}</p>
                         </div>
                     </div>
                 </div>
