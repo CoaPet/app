@@ -2,13 +2,12 @@
 $colorHoverHeader: rgba(0, 56, 79, 0.85);
 $navbarUnderlineHover: #00ffff;
 $navbar-light-brand-color: #FFF;
+$h-band: calc(550px + (100vw - 360px) / 10);
+
 
 .top-img {
     width: 100vw;
-    height: 689px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("../../assets/images/header_sportif_lacets.jpg");
+    height: $h-band;
 }
 
 header .container-banner{
@@ -24,13 +23,17 @@ header .container-banner{
     z-index: 50;
     top: -20px;
 }
+.img_bg_navbar {
+    height: $h-band;
+}
+
+
 
 .bluehover {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 689px;
-    background-repeat: no-repeat;
+    height: $h-band;
     background-color: $colorHoverHeader;
 }
 
@@ -91,7 +94,12 @@ header {
     .nav a {
         color: $light;
     }
+
+    .ss-menu-activities{
+        left: -75px;
+    }
 }
+
 
 @media screen and (max-width: 500px) {
 

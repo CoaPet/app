@@ -1,6 +1,8 @@
-@import "vars";
-@import "~bootstrap/scss/bootstrap";
 
+
+@import "vars";
+@import "paginator";
+@import "~bootstrap/scss/bootstrap";
 @import "about_me";
 @import "activity";
 @import "actuality";

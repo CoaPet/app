@@ -8,17 +8,20 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class FaqType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('question', TextType::class, [
+            ->add('question', CKEditorType::class, [
+                'input_sync' => true,
                 'label' => 'Question',
                 'attr' => ['class' => "col-12"
                 ]])
-            ->add('answer', TextareaType::class, [
+            ->add('answer', CKEditorType::class, [
+                'input_sync' => true,
                 'label' => 'Réponse',
                 'attr' => ['class' => "col-12"
                 ]]);
