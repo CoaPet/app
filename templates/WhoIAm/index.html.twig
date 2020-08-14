@@ -4,7 +4,6 @@
 <section class="whoami mb-5">
     <div class="row">
         <div class="col">
-          <h1 class="text-center text-primary">Qui suis-je ?</h1>
             <div class="row my-5 d-flex justify-content-center">
                 <div class="col-4 d-flex justify-content-center">
                     <img class="img-coach-about-me-home w-75"
@@ -35,12 +34,12 @@
                         <div class="tab-content d-flex mx-md-0" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <p>
-                                    {{ (coachInfo.presentation ?? '')|nl2br }}
+                                    {{ (coachInfo.presentation ?? '')|raw }}
                                 </p>
 
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                {{ (coachInfo.philosophy ?? '')|nl2br }}
+                                {{ (coachInfo.philosophy ?? '')|raw }}
                             </div>
 
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">

@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use \DateTime;
 
 class ActualityType extends AbstractType
@@ -42,7 +43,8 @@ class ActualityType extends AbstractType
                 'download_link' => false,
                 'delete_label'  => 'Supprimer cette image',
             ])
-            ->add('content', TextareaType::class, [
+            ->add('content', CKEditorType::class, [
+                'input_sync' => true,
                 'label' => 'Contenu',
                 'attr' => ['class' => "col-12 form-h-2"
                 ]]);

@@ -4,7 +4,6 @@
 
 {% block body %}
     <section>
-        <h1 class="text-center text-primary">Actualités</h1>
             {% for actuality in actualities %}
                 <div class="row flex-md-row">
                     <div class="w-100 "id="article_{{ actuality.id }}">
@@ -33,8 +32,10 @@
                                     </svg>
                                     {{ actuality.date|date('d M Y') }}
                                 </div>
+                                <div>
+                                    {{ actuality.content|raw }}
+                                </div>
                             </div>
-                            <p class="blog-content ml-0">{{ actuality.content|nl2br }}</p>
                         </div>
                     </div>
                 </div>

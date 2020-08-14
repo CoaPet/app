@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Attended;
-use App\Form\AttendedEditType;
+use App\Form\attendedEditType;
 use App\Form\AttendedType;
 use App\Repository\AttendedRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -65,7 +65,7 @@ class AdminAttendedController extends AbstractController
      */
     public function edit(Request $request, Attended $attended): Response
     {
-        $form = $this->createForm(AttendedEditType::class, $attended);
+        $form = $this->createForm(AttendedType::class, $attended);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

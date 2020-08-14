@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\InfoCoach;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\DomCrawler\Field\TextareaFormField;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\AbstractType;
@@ -38,13 +39,16 @@ class InfoCoachType extends AbstractType
                 'download_uri' => false,
             ])
 
-            ->add('philosophy', TextareaType::class, [
+            ->add('philosophy', CKEditorType::class, [
+                'input_sync' => true,
                 'attr' => ['class'=>"col-12 form-h-1"
                 ]])
-            ->add('presentation', TextareaType::class, [
+            ->add('presentation', CKEditorType::class, [
+                'input_sync' => true,
                 'attr' => ['class'=>"col-12 form-h-3"
                 ]])
-            ->add('quality', TextareaType::class, [
+            ->add('quality', CKEditorType::class, [
+                'input_sync' => true,
                 'attr' => ['class'=>"col-12 form-h-3"
                 ]])
         ;

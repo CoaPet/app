@@ -1,0 +1,51 @@
+.planning {
+    font-size: 1vmin;
+    .time {
+        height: 2vw;
+        font-size: 2vmin;
+    }
+    .head {
+        height:3vw;
+    }
+    .bg-secondary-transparent{
+        background-color: $secondary-transparent;
+    }
+    .fs-2{
+        font-size: 2vmin;
+    }
+    .cours_planning {
+        z-index:5;
+        width: calc(100% - 10px);
+        border-radius: 2px;
+        background-color: $primary;
+        color: $secondary;
+    }
+    .cours_planning:hover {
+        background-color: $secondary;
+        color: $primary;
+        transition: 0.3s;
+         }
+    .hour{
+        top: -2vh;
+    }
+    .one-11{
+        width: calc(100% / 11);
+}
+    .extends {
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: $primary;
+        width: 1100%;
+    }
+    .extends-r {
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: $primary;
+    }
+    a {
+        color: $secondary;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
