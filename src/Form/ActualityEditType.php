@@ -10,16 +10,17 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use \DateTime;
 
-class ActualityEditType extends ActualityType
+class ActualityEditType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('title', TextType::class, [
                 'label' => 'Titre',
-                'attr' => ['class' => "col"
+                'attr' => ['class' => "col-12"
                 ]])
             ->add('date', DateType::class, [
                 'label' => 'Date: jour/mois/année',
@@ -30,7 +31,7 @@ class ActualityEditType extends ActualityType
             ])
             ->add('topic', TextType::class, [
                 'label' => 'Thème',
-                'attr' => ['class' => "col"
+                'attr' => ['class' => "col-12"
                 ]])
             ->add('actualityFile', VichImageType::class, [
                 'label' => 'Image à télécharger',
@@ -41,9 +42,10 @@ class ActualityEditType extends ActualityType
                 'download_link' => false,
                 'delete_label'  => 'Supprimer cette image',
             ])
-            ->add('content', TextareaType::class, [
+            ->add('content', CKEditorType::class, [
+                'input_sync' => true,
                 'label' => 'Contenu',
-                'attr' => ['class' => "col form-h-2"
+                'attr' => ['class' => "col-12 form-h-2"
                 ]]);
     }
 
