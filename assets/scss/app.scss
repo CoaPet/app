@@ -30,16 +30,15 @@ body {
 }
 
 h1 {
-    font-family: $main-font;
+    font-family: 'Qanelas Black';
     color: $light;
-    margin: 50px;
-    font-size: 5vmax;
+    font-size: 45px;
 }
 
 h2 {
-    font-family: $main-font;
-    color: $primary;
-    font-size: 5vmin;
+    font-family: 'Qanelas Light';
+    color: $flashy;
+    font-size: 17px;
 }
 
 .underTitle {

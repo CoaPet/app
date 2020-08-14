@@ -1,6 +1,10 @@
 <header class="w-100 top-img d-flex justify-content-center overflow-hidden">
     <div class="img_bg_navbar position-absolute align-content-center overflow-hidden w-100">
-        <img src="{{ asset('build/header_sportif_lacets.jpg') }}" alt="image de fond" class="min-vw-100">
+        {%  if bgimage is defined %}
+            <img src="{{ asset('build/'~ bgimage ) }}" alt="image de fond" class="min-vw-100">
+        {% else %}
+            <img src="{{ asset('build/header_sportif_lacets.jpg') }}" alt="image de fond" class="min-vw-100">
+        {% endif %}
     </div>
     <div class="bluehover position-relative"></div>
 
@@ -61,7 +65,7 @@
         <div class="w-100 d-flex flex-wrap justify-content-between border-top border-light">
             <div class="col-4">
                 <a class="navbar-brand" href="{{ path('app_index') }}">
-                    <img class="" src="{{ asset('build/peter_logo_white.png') }}" alt="logo coach Peter">
+                        <img src="{{ asset('build/peter_logo_white.png') }}" alt="logo coach Peter">
                 </a>
             </div>
             <div style="left:20%; width: 80%" class=" text-right position-absolute">
@@ -127,7 +131,7 @@
         </div>
         {# Fin bande inférieure#}
         {% include '_flash.html.twig' %}
-        {% include 'home/_headband.html.twig' %}
+        {% include '_headband.html.twig' %}
     </div>
 </header>
 <div class="position-relative min-vw-100">
