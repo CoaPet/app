@@ -94,20 +94,6 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item nav-link dropdown py-2 px-1 mr-1 {{ (app.request.pathInfo==path('app_coaching') or app.request.pathInfo==path('index_team_traing')) ? 'active navbar-focus' : 'navbar-link' }}">
-                                <a class="a-propos dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Activité
-                                    {% if app.request.pathInfo == path('app_coaching') %}
-                                        <span class="sr-only">(current)</span>
-                                    {% endif %}
-                                </a>
-                                <div class="ss-menu-activities dropdown-menu text-right " aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item text-primary" href="{{ path('app_coaching') }}">Coaching</a>
-                                    <a class="dropdown-item text-primary" href="{{ path('index_team_traing') }}">Team Training</a>
-                                    <a class="dropdown-item text-primary" href="{{ path('index_team_traing') }}">A distance</a>
-                                </div>
-                            </li>
-
                             <li class="nav-item py-2 px-1">
                                 <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('transformations') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('transformations') }}">
                                     Transformations
