@@ -1,0 +1,43 @@
+{{ form_start(form) }}
+<div class="form-group d-flex flex-column align-items-center col-4 offset-4 text-primary text-center">
+    <div class="h5">
+        {{ form_label(form.activity, 'Activité') }}
+        <div class="text-danger">
+            {{ form_errors(form.activity) }}
+        </div>
+    </div>
+    {{ form_widget(form.activity) }}
+</div>
+<div class="form-group d-flex flex-column align-items-center col-4 offset-4 text-primary text-center">
+    <div class="h5">
+        {{ form_label(form.day, 'Jour') }}
+        <div class="text-danger">
+            {{ form_errors(form.day) }}
+        </div>
+    </div>
+    {{ form_widget(form.day) }}
+</div>
+<div class="d-flex flex-wrap w-100">
+    <div class="form-group d-flex flex-column align-items-center col-2 offset-4 text-primary text-center">
+        <div class="h5">
+            {{ form_label(form.hour, 'Heure de début') }}
+            <div class="text-danger">
+                {{ form_errors(form.hour) }}
+            </div>
+        </div>
+        {{ form_widget(form.hour) }}
+    </div>
+    <div class="form-group d-flex flex-column align-items-center col-2 text-primary text-center">
+        <div class="h5">
+            {{ form_label(form.duration, 'Durée de l\'activité') }}
+            <div class="text-danger">
+                {{ form_errors(form.duration) }}
+            </div>
+        </div>
+        {{ form_widget(form.duration) }}
+    </div>
+</div>
+<div class="text-center">
+    <button class="btn btn-primary">{{ button_label|default('Ajouter ce cours') }}</button>
+</div>
+{{ form_end(form) }}

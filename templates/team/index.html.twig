@@ -31,7 +31,6 @@
             </div>
         {% endfor %}
     </section>
-<section class="w-100">
-    <img class="col-md-6 offset-md-3" src="{{ asset('/uploads/planning/' ~ coachInfo.planning) }}" class="w-100" alt="Planning des cours collectif">
-</section>
+
+{%  include('team/_planning.html.twig') %}
 {% endblock %}
