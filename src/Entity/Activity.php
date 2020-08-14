@@ -16,7 +16,7 @@ use App\Form;
  */
 class Activity
 {
-    const CATEGORY=['coaching'=>'coaching', 'team'=>'team'];
+    const CATEGORY=['coaching'=>'coaching', 'team'=>'team', 'distance'=>'distance'];
     const MAX_SIZE="500k";
 
     /**

@@ -4,12 +4,22 @@
 </div>
 <section class="activity position-relative w-100 bg-white">
     <div class="card-deck position-relative d-flex justify-content-center flex-wrap">
+        {% set itemsActivity = {
+            'coaching': path('app_coaching'),
+            'team': path('index_team_traing'),
+            'distance': path('app_coaching'),
+        }
+        %}
         {% for activity in activities %}
             <div class="card-activity my-2 col-md-4 ">
 
-                <a class="text-decoration-none" {% if activity.category == "coaching" %} href="{{ path('app_coaching') }}"
-                {% elseif activity.category == "team" %} href="{{ path('index_team_traing') }}"
-                        {% endif %}>
+                <a class="text-decoration-none"
+                {% for itemLabel, itemRoute in itemsActivity %}
+                    {% if activity.category == itemLabel %}
+                        href="{{ itemRoute }}"
+                    {% endif %}
+                {% endfor %}
+                >
                 <img class="card-img-top card-img-top-activity"
                      src="{{ asset('uploads/activites/') ~ activity.picture}}"
                      alt="Card image cap">
@@ -25,10 +35,17 @@
                     <div class="card-text card-text-activity text-center text-break">{{ activity.description [:150]|raw }}...</div>
                 </div>
                 </a>
+                <div class="col-12 text-center p-3">
+                    <a
+                            {% for itemLabel, itemRoute in itemsActivity %}
+                                {% if activity.category == itemLabel %}
+                                    href="{{ itemRoute }}"
+                                {% endif %}
+                            {% endfor %}
+                            class="btn btn-light border-primary text-primary">ME CONTACTER</a>
+                </div>
             </div>
         {% endfor %}
-        <div class="col-12 text-center p-3">
-            <a href="{{ path('app_contact') }}" class="btn btn-light border-primary text-primary">ME CONTACTER</a>
-        </div>
+
     </div>
 </section>
