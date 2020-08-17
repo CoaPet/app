@@ -8,14 +8,13 @@
     </div>
     <div class="bluehover position-relative"></div>
 
-    <div class="col-12 col-xl-8 container-banner position-absolute ">
+    <div class="col-12 container-banner position-absolute ">
         {# debut bande supérieure (adresse => profil) #}
-        <div class="px-0 supnavbar col-12 d-flex flex-column flex-md-row mt-3">
+        <div class="px-0 supnavbar col-12 col-xl-8 d-flex flex-column flex-md-row mt-3 mx-auto">
             <div class="px-0 col-md-6 infoheader d-flex flex-row">
-                <div class="p-0 col-6 d-flex flex-row align-items-center">
+                <div class="p-0 col-6 d-flex flex-row align-items-center text-light">
                     <img class="mx-1 d-flex flex-row" src="{{ asset('build/blue_location.svg') }}" alt="picto_location">
-                    <p>{{ coachInfo.adress ?? '' }}<br> {{ coachInfo.zipCode ?? '' }} {{ (coachInfo.city ?? '')|upper }}
-                    </p>
+                    {{ coachInfo.adress ?? '' }} {{ coachInfo.zipCode ?? '' }} {{ (coachInfo.city ?? '')|upper }}
                 </div>
                 <div class="col-6 px-0 d-flex ">
                     <div class="row align-items-center mx-auto">
@@ -61,8 +60,9 @@
             </div>
         </div>
         {# Fin bande supérieure#}
+        <div class="line"></div>
         {# Debut bande inférieure (Logo + liens de navigation) #}
-        <div class="w-100 d-flex flex-wrap justify-content-between border-top border-light">
+        <div class="bloc-bi col-xl-8 mx-auto d-flex flex-wrap justify-content-between">
             <div class="col-4">
                 <a class="navbar-brand" href="{{ path('app_index') }}">
                         <img src="{{ asset('build/peter_logo_white.png') }}" alt="logo coach Peter">
@@ -83,14 +83,14 @@
                         <ul class="navbar-nav mr-0">
 
                             {% if is_granted('ROLE_MEMBER') %}
-                                <li class="nav-item py-2 px-1">
-                                    <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">Espace
+                                <li class="nav-item">
+                                    <a class="text-light text-decoration-none {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">Espace
                                         Membre</a>
                                 </li>
                             {% endif %}
 
-                            <li class="nav-item py-2 px-1">
-                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('whoiam_index') ? 'active navbar-focus' : 'navbar-link' }} p-0" href="{{ path('whoiam_index') }}">
+                            <li class="nav-item">
+                                <a class="text-light text-decoration-none {{ app.request.pathInfo == path('whoiam_index') ? 'active navbar-focus' : 'navbar-link' }} p-0" href="{{ path('whoiam_index') }}">
                                     Qui suis-je
                                     {% if app.request.pathInfo == path('whoiam_index') %}
                                         <span class="sr-only">(current)</span>
@@ -98,8 +98,8 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item py-2 px-1">
-                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('transformations') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('transformations') }}">
+                            <li class="nav-item">
+                                <a class="text-light text-decoration-none {{ app.request.pathInfo == path('transformations') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('transformations') }}">
                                     Transformations
                                     {% if app.request.pathInfo == path('transformations') %}
                                         <span class="sr-only">(current)</span>
@@ -107,8 +107,8 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item py-2 px-1">
-                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('app_actuality') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_actuality') }}">
+                            <li class="nav-item">
+                                <a class="text-light text-decoration-none {{ app.request.pathInfo == path('app_actuality') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_actuality') }}">
                                     Actualité
                                     {% if app.request.pathInfo == path('app_actuality') %}
                                         <span class="sr-only">(current)</span>
@@ -116,8 +116,8 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item py-2 px-1">
-                                <a class="nav-item text-light text-decoration-none {{ app.request.pathInfo == path('app_contact') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_contact') }}">
+                            <li class="nav-item">
+                                <a class="text-light text-decoration-none {{ app.request.pathInfo == path('app_contact') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_contact') }}">
                                     Contact
                                     {% if app.request.pathInfo == path('app_contact') %}
                                         <span class="sr-only">(current)</span>
