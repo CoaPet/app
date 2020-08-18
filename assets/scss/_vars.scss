@@ -27,6 +27,35 @@
     font-family: 'Qanelas Black';
     src: url("../fonts/Police-Qanelas/Qanelas-Black.ttf");
 }
+@font-face {
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat Semi-Bold';
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url("../fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat Black';
+    src: url("../fonts/Montserrat/Montserrat-Black.ttf");
+}
 
 $primary: #00384f;
 $primary-transparent: rgba(0,56,79,0.9);
