@@ -115,9 +115,6 @@ header {
     .ss-menu-activities{
         left: -75px;
     }
-    .btn{
-        margin-top: 10px;
-    }
 }
 .griffe{
     margin-bottom: 12px;
@@ -126,8 +123,14 @@ header {
     margin-bottom: 50px;
 }
 .headband .btn{
+    margin-top:10px;
     padding:10px 30px 10px 30px;
     border-radius: 10px;
+    border-color:$light;
+    color: $light;
+}
+.headband .btn:hover{
+    border-color: $flashy;
 }
 
 @media screen and (max-width: 500px) {
