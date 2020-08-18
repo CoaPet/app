@@ -27,25 +27,22 @@
                 <div class="row">
                     <div class="flex-row align-items-center justify-content-around">
                         <a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
-                                    class="pictos navbar-text" src="{{ asset('build/blue_facebook.svg') }}"
-                                    alt="Lien vers page Facebook"></a>
-                        <a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
-                                    class="pictos navbar-text" src="{{ asset('build/twitter.svg') }}"
-                                    alt="Lien vers page Facebook"></a>
-                        <a class="mt-2" href="https://instagram.com/coach_peter.orleans?igshid=crqgsjokas3f"
-                           target="_blank"><img class="pictos navbar-text" src="{{ asset('build/blue_insta.svg') }}"
-                                                alt="Lien vers page Instagram"></a>
-                        <a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
-                                    class="pictos navbar-text" src="{{ asset('build/google.svg') }}"
+                                    class="pictos sociaux navbar-text" src="{{ asset('build/blue_facebook.svg') }}"
+                                    alt="Lien vers page Facebook"></a><a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
+                                    class="pictos sociaux navbar-text" src="{{ asset('build/twitter.svg') }}"
+                                    alt="Lien vers page Facebook"></a><a class="mt-2" href="https://instagram.com/coach_peter.orleans?igshid=crqgsjokas3f"
+                           target="_blank"><img class="pictos sociaux navbar-text" src="{{ asset('build/blue_insta.svg') }}"
+                                                alt="Lien vers page Instagram"></a><a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
+                                    class="pictos sociaux navbar-text" src="{{ asset('build/google.svg') }}"
                                     alt="Lien vers page Facebook"></a>
                     </div>
-                    <div class="flex-row align-items-center float-right">
-                        <img class="pictos navbar-text" src="{{ asset('build/blue_connection.svg') }}"
-                             alt="Lien vers page de connexion">
+                    <div class="flex-row align-items-center float-right ml-0">
+
                         {% if app.user %}
-                            <a class="mb-1 nav-item text-light dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            <a class=" text-light dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ app.user.firstname }}
+                                <img class="pictos navbar-text" src="{{ asset('build/blue_connection.svg') }}"
+                                     alt="Lien vers page de connexion">{{ app.user.firstname }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 {% if is_granted('ROLE_ADMIN') %}
@@ -57,7 +54,9 @@
                             </div>
                         {% else %}
                             <a href="{{ path('app_login') }}"
-                               class="nav-item navbar-link text-light text-decoration-none">Connexion</a>
+                               class="navbar-link text-light text-decoration-none">
+                                <img class="pictos navbar-text" src="{{ asset('build/blue_connection.svg') }}"
+                                     alt="Lien vers page de connexion">Connexion</a>
                         {% endif %}
                     </div>
                 </div>

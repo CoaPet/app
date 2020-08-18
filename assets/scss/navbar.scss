@@ -2,7 +2,7 @@
 $colorHoverHeader: rgba(0, 56, 79, 0.85);
 $navbarUnderlineHover: #00ffff;
 $navbar-light-brand-color: #FFF;
-$h-band: calc(550px + (100vw - 360px) / 10);
+$h-band: 695px;
 
 .top-img {
     width: 100vw;
@@ -73,14 +73,18 @@ header .line{
 }
 
 .nav-item {
-    font-family: $nav-font;
-    font-size: $xtra-small-font-size;
+    font-family: Qanelas;
+    font-size: 14px;
     margin-left:50px;
 }
 
 header {
+    .sociaux{
+        margin-right: 15px;
+    }
     .navbar-link:hover {
         color: $light;
+        font-family: "Qanelas SemiBold";
     }
 
     .navbar-focus::after {
@@ -95,7 +99,7 @@ header {
         content: '';
         display: block;
         width: 0;
-        height: 2px;
+        height: 1px;
         background: $navbarUnderlineHover;
         transition: width .3s;
     }
@@ -120,6 +124,10 @@ header {
 }
 .bloc-bi{
     margin-bottom: 50px;
+}
+.headband .btn{
+    padding:10px 30px 10px 30px;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 500px) {
