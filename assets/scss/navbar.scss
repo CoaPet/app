@@ -2,7 +2,7 @@
 $colorHoverHeader: rgba(0, 56, 79, 0.85);
 $navbarUnderlineHover: #00ffff;
 $navbar-light-brand-color: #FFF;
-$h-band: calc(550px + (100vw - 360px) / 10);
+$h-band: 695px;
 
 .top-img {
     width: 100vw;
@@ -15,6 +15,8 @@ header .container-banner{
 }
 header .line{
     margin: 0;
+    margin-top: 12px;;
+    margin-bottom: 10px;
     padding: 0;
     width: 100%;
     height: 1px;
@@ -25,7 +27,10 @@ header .line{
 .navbar {
     border-top: solid 1px $light ;
 }
-
+.supnavbar{
+    font-family: Montserrat;
+    font-size: 13px;
+}
 .navbar-collapse {
     z-index: 50;
     top: -20px;
@@ -33,8 +38,6 @@ header .line{
 .img_bg_navbar {
     height: $h-band;
 }
-
-
 
 .bluehover {
     top: 0;
@@ -48,9 +51,10 @@ header .line{
     color: $light;
 }
 
-.infoheader img {
-    height: 17px;
-    width: 17px;
+.pictos {
+    height: 20px;
+    width: 20px;
+    padding:0;
 }
 
 .infoheader p {
@@ -69,14 +73,18 @@ header .line{
 }
 
 .nav-item {
-    font-family: $nav-font;
-    font-size: $xtra-small-font-size;
+    font-family: Qanelas;
+    font-size: 14px;
     margin-left:50px;
 }
 
 header {
+    .sociaux{
+        margin-right: 15px;
+    }
     .navbar-link:hover {
         color: $light;
+        font-family: "Qanelas SemiBold";
     }
 
     .navbar-focus::after {
@@ -91,7 +99,7 @@ header {
         content: '';
         display: block;
         width: 0;
-        height: 2px;
+        height: 1px;
         background: $navbarUnderlineHover;
         transition: width .3s;
     }
@@ -107,15 +115,22 @@ header {
     .ss-menu-activities{
         left: -75px;
     }
-    .btn{
-        margin-top: 10px;
-    }
 }
 .griffe{
     margin-bottom: 12px;
 }
 .bloc-bi{
     margin-bottom: 50px;
+}
+.headband .btn{
+    margin-top:10px;
+    padding:10px 30px 10px 30px;
+    border-radius: 10px;
+    border-color:$light;
+    color: $light;
+}
+.headband .btn:hover{
+    border-color: $flashy;
 }
 
 @media screen and (max-width: 500px) {
