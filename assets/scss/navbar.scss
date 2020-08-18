@@ -3,12 +3,23 @@ $colorHoverHeader: rgba(0, 56, 79, 0.85);
 $navbarUnderlineHover: #00ffff;
 $navbar-light-brand-color: #FFF;
 $h-band: 695px;
+$h-band-pages: 530px;
 
 .top-img {
     width: 100vw;
     height: $h-band;
 }
-
+.top-img-pages {
+    margin-bottom: 20px;
+    width: 100vw;
+    height: $h-band-pages;
+}
+.img_bg_navbar {
+    height: $h-band;
+}
+.img_bg_navbar_pages {
+    height: $h-band-pages;
+}
 header .container-banner{
     top:0;
     margin: auto;
@@ -34,9 +45,6 @@ header .line{
 .navbar-collapse {
     z-index: 50;
     top: -20px;
-}
-.img_bg_navbar {
-    height: $h-band;
 }
 
 .bluehover {
@@ -73,20 +81,20 @@ header .line{
 }
 
 .nav-item {
-    font-family: Qanelas;
+    font-family: Montserrat;
     font-size: 14px;
     margin-left:50px;
+}
+.nav-items-act{
 }
 
 header {
     .sociaux{
         margin-right: 15px;
     }
-    .navbar-link:hover {
-        color: $light;
-        font-family: "Qanelas SemiBold";
+    .navbar-focus{
+        font-family: 'Montserrat Semi-Bold';
     }
-
     .navbar-focus::after {
         content: '';
         display: block;

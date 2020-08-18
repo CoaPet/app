@@ -1,5 +1,5 @@
-<header class="w-100 top-img d-flex justify-content-center overflow-hidden">
-    <div class="img_bg_navbar position-absolute align-content-center overflow-hidden w-100">
+<header class="w-100 {% if app.request.pathInfo == path('app_index') %}top-img {% else%}top-img-pages{% endif %} d-flex justify-content-center overflow-hidden">
+    <div class="{% if app.request.pathInfo == path('app_index') %}img_bg_navbar {% else%}img_bg_navbar_pages{% endif %} position-absolute align-content-center overflow-hidden w-100">
         {%  if bgimage is defined %}
             <img src="{{ asset('build/'~ bgimage ) }}" alt="image de fond" class="min-vw-100">
         {% else %}

@@ -3,7 +3,7 @@
                 class="font-weight-bold">SANTÉ, SPORT, NUTRITION</span></h2>
     <div class="row justify-content-center justify-content-md-around">
         {% for actuality in actualities %}
-            <div class="card card-actu m-3 col-md-3  p-0">
+            <div class="card card-actu m-3 col-md-3 overflow-hidden p-0">
                 <a href="{{ path('app_actuality')}}#article_{{ actuality.id }}" class="text-decoration-none">
                     <img class="card-img-top card-actu-img" src="{{ vich_uploader_asset(actuality, 'actualityFile') }}"
                          alt="{{ actuality.title }}">
