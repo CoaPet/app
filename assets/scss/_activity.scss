@@ -1,4 +1,7 @@
 $circle: #ffffff;
+.card-activity{
+    height: 565px;
+}
 
 .card-text-activity{
     height: 120px;
@@ -26,6 +29,7 @@ $circle: #ffffff;
 
 .activity{
     max-width: 1150px;
+    height: 500px;
 }
 
 .card-img-top-activity {
@@ -44,5 +48,5 @@ $circle: #ffffff;
 }
 
 .card-activity:nth-child(even) .badge-activity {
-    background-color: $secondary;
+    background-color: #3a9eb5;
 }
