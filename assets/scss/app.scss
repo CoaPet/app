@@ -21,9 +21,6 @@
 body {
     width: 100vw;
     overflow-x: hidden;
-}
-
-body {
     background-color: $ultra-light;
     font-family: 'Qanelas';
 }
@@ -35,9 +32,8 @@ h1 {
 }
 
 h2 {
-    font-family: 'Qanelas Light';
-    color: $flashy;
-    font-size: 17px;
+    font-family: Qanelas;
+    font-size: $medium-font-size;
 }
 
 .underTitle {
@@ -56,4 +52,78 @@ section {
 .flashy{
     color: $flashy;
 }
+.main-font{
+    font-family: $main-font;
+}
+.main-font-medium{
+    font-family: $main-font-medium;
+}
+.main-font-semi-bold{
+    font-family: $main-font-semi-bold;
+}
+.main-font-bold{
+    font-family: $main-font-bold;
+}
+.main-font-black{
+    font-family: $main-font-black;
+}
+.main-font-light{
+    font-family: $main-font-light;
+}
+.nav-font{
+    font-family: $nav-font ;
+}
 
+.nav-font-light{
+    font-family: $nav-font-light ;
+}
+
+.nav-font-medium{
+    font-family: $nav-font-medium ;
+}
+
+.nav-font-semi-bold{
+    font-family: $nav-font-semi-bold ;
+}
+
+.nav-font-bold{
+    font-family: $nav-font-bold ;
+}
+
+.nav-font-black{
+    font-family: $nav-font-black ;
+}
+.caption-font{
+    font-family: $caption-font;
+}
+.btn{
+    border-radius: 10px;
+    padding: 10px 30px 10px 30px;
+}
+.xxs-font-size{
+    font-size: 12px;
+}
+.xs-font-size{
+    font-size: $xtra-small-font-size;
+}
+.small-14-font-size{
+    font-size: $small-14-font-size;
+}
+.small-15-font-size{
+    font-size: $small-15-font-size;
+}
+.small-font-size{
+    font-size: $small-font-size;
+}
+.medium-font-size{
+    font-size: $medium-font-size;
+}
+.medium-17-font-size{
+    font-size: $medium-17-font-size;
+}
+.medium-20-font-size{
+    font-size: $medium-20-font-size;
+}
+.semi-large-font-size{
+    font-size: $semi-large-font-size;
+}

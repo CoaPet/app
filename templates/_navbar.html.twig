@@ -87,14 +87,14 @@
 
                             {% if is_granted('ROLE_MEMBER') %}
                                 <li class="nav-item">
-                                    <a class="text-light text-decoration-none {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">Espace
-                                        Membre</a>
+                                    <a class="text-light text-decoration-none {{ app.request.pathInfo==path('app_member') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_member') }}">ESPACE
+                                        MEMBRE</a>
                                 </li>
                             {% endif %}
 
                             <li class="nav-item">
                                 <a class="text-light text-decoration-none {{ app.request.pathInfo == path('whoiam_index') ? 'active navbar-focus' : 'navbar-link' }} p-0" href="{{ path('whoiam_index') }}">
-                                    Qui suis-je
+                                    QUI SUIS-JE
                                     {% if app.request.pathInfo == path('whoiam_index') %}
                                         <span class="sr-only">(current)</span>
                                     {% endif %}
@@ -103,7 +103,7 @@
 
                             <li class="nav-item">
                                 <a class="text-light text-decoration-none {{ app.request.pathInfo == path('transformations') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('transformations') }}">
-                                    Transformations
+                                    TRANSFORMATIONS
                                     {% if app.request.pathInfo == path('transformations') %}
                                         <span class="sr-only">(current)</span>
                                     {% endif %}
@@ -112,7 +112,7 @@
 
                             <li class="nav-item">
                                 <a class="text-light text-decoration-none {{ app.request.pathInfo == path('app_actuality') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_actuality') }}">
-                                    Actualité
+                                    ACTUALITÉ
                                     {% if app.request.pathInfo == path('app_actuality') %}
                                         <span class="sr-only">(current)</span>
                                     {% endif %}
@@ -121,7 +121,7 @@
 
                             <li class="nav-item">
                                 <a class="text-light text-decoration-none {{ app.request.pathInfo == path('app_contact') ? 'active navbar-focus' : 'navbar-link' }}" href="{{ path('app_contact') }}">
-                                    Contact
+                                    CONTACT
                                     {% if app.request.pathInfo == path('app_contact') %}
                                         <span class="sr-only">(current)</span>
                                     {% endif %}
