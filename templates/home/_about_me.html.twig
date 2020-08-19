@@ -15,7 +15,7 @@
                 <h3 class="coach-name-about-me font-weight-bold">
                     <span class="text-primary main-font-black semi-large-font-size">PETER DIONISIO</span>
                 </h3>
-                <p class="font-italic">
+                <p class="font-italic caption-font medium-20-font-size">
                     "{{ (coachInfo.catchline ?? '')|raw }}"
                 </p>
                 <div>
@@ -46,9 +46,9 @@
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         {{ (coachInfo.quality ?? '')|raw }}
                     </div>
-                    <div class="text-center">
+                    <div class="text-left">
                         <a href="{{ path('app_contact') }}" type="button"
-                           class="mt-5 btn btn-light border-primary text-primary">
+                           class="mt-3 mb-4 btn border-primary text-primary nav-font-semi-bold small-14-font-size">
                             ME CONTACTER
                         </a>
                     </div>

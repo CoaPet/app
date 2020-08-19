@@ -4,8 +4,8 @@
     color: $light;
     padding-left: 17px;
     padding-top: 11px;
-    font-family: $main-font;
-    font-size: $small-font-size;
+    font-family: $main-font-semi-bold;
+    font-size: $small-15-font-size;
 }
 
 .card-actu:nth-child(even) .badge {
@@ -34,7 +34,7 @@
 
 .card-actu-text {
     color: $darkgray;
-    font-family: $main-font;
+    font-family: $main-font-light;
     font-size: $small-font-size;
 }
 
@@ -44,6 +44,6 @@
 }
 
 .card-title-actu{
-    font-family: Qanelas-Bold;
+    font-family: $main-font-semi-bold;
     font-size: $small-font-size;
 }
