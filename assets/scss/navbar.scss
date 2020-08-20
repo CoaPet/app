@@ -94,11 +94,14 @@ header {
     }
     .navbar-focus{
         font-family: 'Montserrat Semi-Bold';
+        color: $flashy!important;
     }
     .navbar-focus::after {
         content: '';
         display: block;
-        width: 100%;
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
         height: 2px;
         background: $navbarUnderlineHover;
     }

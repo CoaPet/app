@@ -11,8 +11,8 @@
         }
         %}
         {% for activity in activities %}
+            {%  set show = activity.description|split(' ') %}
             <div class="card-activity my-2 col-md-4 ">
-
                 <a class="text-decoration-none"
                 {% for itemLabel, itemRoute in itemsActivity %}
                     {% if activity.category == itemLabel %}
@@ -31,8 +31,12 @@
                             <img class="w-50" src="{{ asset('build/running.svg')}}" alt="pictogramme de l'activité">
                         {% endif %}
                     </div>
-                    <h3 class="card-title text-primary text-center mt-2 medium-font-size main-font-medium">{{ activity.title|upper }}</h3>
-                    <div class="card-text card-text-activity text-center text-break">{{ activity.description [:150]|raw }}...</div>
+                    <h3 class="card-title text-primary text-center mt-2 medium-font-size main-font-medium">
+                        {{ activity.title|upper }}
+                    </h3>
+                    <div class="card-text card-text-activity text-center text-break">
+                        {{ activity.description|truncateText(20, '...')|raw }}
+                    </div>
                 </div>
                 </a>
                 <div class="col-12 text-center p-3">
