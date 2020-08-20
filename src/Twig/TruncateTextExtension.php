@@ -19,19 +19,17 @@ class TruncateTextExtension extends AbstractExtension
         ];
     }
 
-    public function truncateText($text, $words, $end)
+    public function truncateText($text, $words = 30, $end = '...')
     {
         $array = explode(' ', $text);
         $result = '';
         if (count($array)<$words) {
-            $result = implode(' ', $array);
+            return implode(' ', $array);
         } else {
             for ($i=0; $i<$words; $i++) {
                 $result = $result . ' ' . $array[$i];
             }
-            $result = $result . $end;
+            return $result . $end;
         }
-
-        return $result;
     }
 }

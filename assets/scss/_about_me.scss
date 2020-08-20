@@ -2,7 +2,27 @@
     object-fit: contain;
     width: 500px;
 }
+.about-me-home {
+    .catchline {
+        width: 450px;
+    }
+    .text{
+        width: 570px;
+    }
+    .contact {
+        margin-top: 30px;
+    }
 
+    .nav-item {
+        margin-left: 0;
+    }
+    li{
+        text-align: left;
+    }
+    .nav-link{
+        padding: 10px 15px 10px 0;
+    }
+}
 .coach-name-about-me {
     font-family: $caption-font;
     font-size: $large-font-size;
