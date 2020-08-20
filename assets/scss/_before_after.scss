@@ -1,14 +1,17 @@
 .before_after {
     width:100vw;
     background-color: $primary;
+    padding-top: 30px;
     margin-bottom: 30px;
 }
 
+.carousel-control{
+    background-size: 50px 50px!important;
+}
 .first_image {
     object-fit: contain;
     transform: rotate(-10deg);
     max-height: 45vh;
-    border-radius: 10px;
     box-shadow: -4px 4px 4px 0 $shadow;
     margin-bottom: 50px;
 }
@@ -18,7 +21,6 @@
     top: 20%;
     left: 80%;
     max-height: 45vh;
-    border-radius: 10px;
     transform: rotate(10deg);
     box-shadow: -4px 4px 4px 0 $shadow;
 }
@@ -37,9 +39,6 @@
     overflow: hidden;
     min-height: 100px;
     max-height: 250px;
-}
-
-.next{
 }
 
 .next_image{

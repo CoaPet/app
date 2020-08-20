@@ -12,12 +12,12 @@
         {# debut bande supérieure (adresse => profil) #}
         <div class="px-0 supnavbar col-12 col-xl-8 d-flex flex-column flex-md-row mt-3 mx-auto">
             <div class="px-0 col-md-6 infoheader d-flex flex-row">
-                <div class="p-0 col-7 d-flex flex-row align-items-center text-light">
+                <div class="p-0 d-flex flex-row align-items-center text-light">
                     <img class="pictos mx-1 d-flex flex-row" src="{{ asset('build/blue_location.svg') }}" alt="picto_location">
                     {{ coachInfo.adress ?? '' }}, {{ coachInfo.zipCode ?? '' }} {{ (coachInfo.city ?? '')|upper }}
                 </div>
-                <div class="col-5 px-0 d-flex flex-row align-items-center ">
-                    <div class="row align-items-center mx-auto">
+                <div class="px-0 d-flex flex-row align-items-center">
+                    <div class="ml-3 row align-items-center">
                         <img class="pictos mx-1" src="{{ asset('build/blue_tel.svg') }}" alt="picto_phone">
                         <p class="text-right my-0">{{ (coachInfo.phone ?? '')|formatPhoneFr }}</p>
                     </div>
@@ -26,15 +26,20 @@
             <div class="row col-md-6 justify-content-end">
                 <div class="row">
                     <div class="flex-row align-items-center justify-content-around">
-                        <a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
+                        <a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank">
+                            <img
                                     class="pictos sociaux navbar-text" src="{{ asset('build/blue_facebook.svg') }}"
-                                    alt="Lien vers page Facebook"></a><a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
-                                    class="pictos sociaux navbar-text" src="{{ asset('build/twitter.svg') }}"
-                                    alt="Lien vers page Facebook"></a><a class="mt-2" href="https://instagram.com/coach_peter.orleans?igshid=crqgsjokas3f"
-                           target="_blank"><img class="pictos sociaux navbar-text" src="{{ asset('build/blue_insta.svg') }}"
-                                                alt="Lien vers page Instagram"></a><a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank"><img
-                                    class="pictos sociaux navbar-text" src="{{ asset('build/google.svg') }}"
-                                    alt="Lien vers page Facebook"></a>
+                                    alt="Lien vers page Facebook">
+                        </a>
+                        <a class="mt-2" href="https://instagram.com/coach_peter.orleans?igshid=crqgsjokas3f"
+                           target="_blank">
+                            <img class="pictos sociaux navbar-text" src="{{ asset('build/blue_insta.svg') }}"
+                                                alt="Lien vers page Instagram">
+                        </a>
+                        <a class="mt-2" href="https://fr-fr.facebook.com/coachpeter.orleans/" target="_blank">
+                            <img class="pictos sociaux navbar-text" src="{{ asset('build/google.svg') }}"
+                                    alt="Lien vers page Facebook">
+                        </a>
                     </div>
                     <div class="flex-row align-items-center float-right ml-0">
 
@@ -82,7 +87,7 @@
                                   d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg>
                     </button>
-                    <div class="collapse navbar-collapse text-right pr-3 justify-content-end" id="navbarNav">
+                    <div class="collapse navbar-collapse text-right justify-content-end" id="navbarNav">
                         <ul class="navbar-nav mr-0">
 
                             {% if is_granted('ROLE_MEMBER') %}
