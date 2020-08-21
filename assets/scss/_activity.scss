@@ -2,7 +2,15 @@ $circle: #ffffff;
 .card-activity{
     height: 565px;
 }
-
+.card-deck .distance{
+    order: 3;
+}
+.card-deck .team{
+    order: 2;
+}
+.card-deck .coaching{
+    order: 1;
+}
 .card-text-activity{
     height: 120px;
     width: 80%;
