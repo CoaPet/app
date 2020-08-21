@@ -18,8 +18,8 @@
         position: absolute;
         --card-spacing:100px;
         --card-height:calc(var(--map-height) - 100px);
-        right:var(--card-spacing);
-        top:calc(var(--card-spacing) / 2);
+        left:50%;
+        top:calc((var(--map-height) - 225px) / 2);
         background-color: $ultra-light;
         width: 316px;
         height: 225px;
