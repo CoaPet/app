@@ -85,8 +85,6 @@ header .line{
     font-size: 14px;
     margin-left:50px;
 }
-.nav-items-act{
-}
 
 header {
     .sociaux{
@@ -143,7 +141,11 @@ header {
 .headband .btn:hover{
     border-color: $flashy;
 }
-
+@media screen and (min-width: 1250px){
+    .bloc-bi, .supnavbar{
+        width: 1240px;
+    }
+}
 @media screen and (max-width: 500px) {
 
     .navbar-collapse {
