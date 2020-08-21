@@ -22,6 +22,15 @@
     .nav-link{
         padding: 10px 15px 10px 0;
     }
+    li .active{
+        font-family: $nav-font-bold;
+    }
+    li .active{
+        font-family: $nav-font-bold;
+    }
+    .active::after {
+        width: 100%;
+    }
 }
 .coach-name-about-me {
     font-family: $caption-font;
