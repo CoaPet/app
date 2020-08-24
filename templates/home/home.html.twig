@@ -2,7 +2,37 @@
 
 {% block title %}Accueil Coach Peter{% endblock %}
 
+{% block head %}
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX_HfMTaQdYgBbAtZ1UFmnma1ffQshm3c&callback=initMap&libraries=&v=weekly"
+                defer
+        ></script>
+        <style type="text/css">
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                height: 400px;
+            }
+
+        </style>
+        <script>
+            "use strict";
+            let map;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: {
+                        lat: 47.891,
+                        lng: 1.900
+                    },
+                    zoom: 15
+                });
+            }
+        </script>
+{% endblock %}
+
 {% block body %}
+
     <div class="position-relative min-vw-100">
         <div class="round w-100 bg-white"></div>
     </div>
