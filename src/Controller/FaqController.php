@@ -23,7 +23,8 @@ class FaqController extends AbstractController
         return $this->render('faq/index.html.twig', [
             'coachInfo' => $coachInfo,
             'faqs' => $faqRepository->findAll(),
-            'title' => 'F.A.Q.'
+            'title' => 'F.A.Q.',
+            'underTitle' => 'Foire aux questions',
         ]);
     }
 }

@@ -25,7 +25,8 @@ class MemberController extends AbstractController
 
         return $this->render('member/index.html.twig', [
             'coachInfo' => $coachInfo,
-            'title' => 'Espace Membre'
+            'title' => 'Espace Membre',
+            'underTitle' => 'Votre espace, vos ressources',
         ]);
     }
 }

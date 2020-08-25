@@ -45,6 +45,8 @@ class HomeController extends AbstractController
             'activities' => $activities,
             'transformations'=>$transformations,
             'actualities' => $actualities,
+            'title' => 'COACH PETER',
+            'underTitle' => 'COACH SPÉCIALISÉ EN SPORT - NUTRITION - SANTÉ À ORLÉANS',
         ]);
     }
 }
