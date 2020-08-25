@@ -2,13 +2,34 @@ $textfont : Montserrat;
 $italic-font : 'Caveat';
 
 .whoami {
+    h2 {
+        font-size: $small-font-size;
+        font-family: $main-font-semi-bold;
+    }
+    .number {
+        font-size: $xlarge-font-size;
+    }
     p {
         font-family: $textfont;
     }
 
     .font-italic {
         font-family: $italic-font, cursive;
-        font-size: 22px;
+    }
+    .size-26{
+        font-size: 26px;
+    }
+    li .active{
+        font-family: $nav-font-bold;
+    }
+    .active::after {
+        width: 100%;
+    }
+    .rezo-whoAmI{
+        a:hover{
+            text-decoration: none;
+            color: $secondary;
+        }
     }
 }
 

@@ -44,7 +44,8 @@ class ContactController extends AbstractController
         return $this->render('contact/contact.html.twig', [
             'coachInfo' => $coachInfo,
             'form' => $form->createView(),
-            'title' => 'Contact'
+            'title' => 'Contact',
+            'underTitle' => 'Rencontrons-nous',
         ]);
     }
 }

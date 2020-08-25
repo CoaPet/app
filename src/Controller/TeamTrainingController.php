@@ -38,6 +38,7 @@ class TeamTrainingController extends AbstractController
             'coachInfo' => $coachInfo,
             'activities' => $activities,
             'title' => 'Team Training',
+            'underTitle' => 'Ensemble on est plus fort',
             'visualPlanning' => $visualPlanning,
             'hours' => $dataPlanning::HOURS,
             'days' => $dataPlanning::DAYS,
