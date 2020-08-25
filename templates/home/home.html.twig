@@ -11,7 +11,7 @@
             /* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
             #map {
-                filter: grayscale(90%) blur(0.2px);
+                filter: grayscale(90%) blur(0.1px);
                 height: 400px;
             }
 
@@ -26,6 +26,22 @@
                         lat: 47.892862,
                         lng: 1.900613
                     },
+                    styles: [
+                        {
+                            featureType: 'landscape',
+                            "stylers": [
+                                { 'color': '#FDFFFD' }
+                            ]
+                        },
+                        {
+                            featureType: 'road',
+                            "stylers": [
+                                { 'color': '#DDFFDD' }
+                            ]
+                        }
+                        ],
+                    mapTypeControl: false,
+                    streetViewControl: false,
                     zoom: 15
                 });
             }

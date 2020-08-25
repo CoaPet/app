@@ -30,6 +30,7 @@ class WhoIAmController extends AbstractController
             'degrees' => $coachDegrees,
             'coachInfo' => $coachInfo,
             'title' => 'Qui suis-je ?',
+            'underTitle' => 'Mon accompagnement pas à pas',
             'bgimage' => 'groupe.jpg',
         ]);
     }
