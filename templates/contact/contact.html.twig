@@ -1,40 +1,55 @@
 {% extends 'base_user.html.twig' %}
 
 {% block body %}
-    <div class="container mt-5 mb-5">
+<section id="contact" class="row mx-auto">
+    <div class="mt-5 mb-5 col-md-6">
         <div class="col">
             {{ form_start(form) }}
 
-            <div class="float-left col">{{ form_label(form.firstname) }}</div>
-            <div class="text-danger col">{{ form_errors(form.firstname) }}</div>
-            {{ form_widget(form.firstname) }}
+            <div class="float-left col">{{ form_label(form.name) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
+            <div class="text-danger col">{{ form_errors(form.name) }}</div>
+            {{ form_widget(form.name) }}
 
-            <div class="float-left col">{{ form_label(form.lastname) }}</div>
-            <div class="text-danger col">{{ form_errors(form.lastname) }}</div>
-            {{ form_widget(form.lastname) }}
-
-            <div class="float-left col">{{ form_label(form.birthDate) }}</div>
+            <div class="float-left col">{{ form_label(form.birthDate) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
             <div class="col text-danger col">{{ form_errors(form.birthDate) }}</div>
             {{ form_widget(form.birthDate) }}
             <small class="float-left text-muted mt-0 col">{{ form_help(form.birthDate) }}</small>
 
-            <div class="float-left col">{{ form_label(form.phone) }}</div>
+            <div class="float-left col">{{ form_label(form.phone) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
             <div class="col text-danger">{{ form_errors(form.phone) }}</div>
             {{ form_widget(form.phone) }}
             <small class="float-left text-muted col">{{ form_help(form.phone) }}</small>
 
-            <div class="float-left col">{{ form_label(form.email) }}</div>
+            <div class="float-left col">{{ form_label(form.email) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
             <div class="col text-danger">{{ form_errors(form.email) }}</div>
             {{ form_widget(form.email) }}
             <small class="float-left text-muted col">{{ form_help(form.email) }}</small>
 
-            <div class="float-left col">{{ form_label(form.message) }}</div>
+            <div class="float-left col">{{ form_label(form.items) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
+            <div class="col text-danger">{{ form_errors(form.items) }}</div>
+            {{ form_widget(form.items) }}
+            <small class="float-left text-muted">{{ form_help(form.items) }}</small>
+
+            <div class="float-left col">{{ form_label(form.message) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
             <div class="col text-danger">{{ form_errors(form.message) }}</div>
             {{ form_widget(form.message) }}
             <small class="float-left text-muted">{{ form_help(form.message) }}</small>
 
-            <div class="mt-5 text-center"><button class="btn btn-primary">Envoyer</button></div>
+            <div class="mt-5 text-left"><button class="btn border-primary nav-font-semi-bold small-14-font-size">ENVOYER</button></div>
             {{ form_end(form) }}
         </div>
     </div>
+    <div class="col-md-5">
+        <div class="pola position-absolute">
+            <div class="picture_duo first_image position-relative bg-light col-lg-12 p-2">
+                <div class="overflow-hidden polaroid_img m-auto bg-secondary">
+                    <img class="w-100 my-auto" src="{{ asset('build/peter.png') }}" alt="Peter">
+                </div>
+                <div class="text-center text-primary font-italic size-26">
+                    A très vite
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
