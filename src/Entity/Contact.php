@@ -11,13 +11,7 @@ class Contact
      * @Assert\Length(max=50, maxMessage="Votre prénom doit être inférieur à {{ limit }} caractères")
      * @Assert\NotBlank(message="Merci de saisir votre prénom")
      */
-    private $firstname;
-
-    /**
-     * @Assert\Length(max=50, maxMessage="Votre nom doit être inférieur à {{ limit }} caractères")
-     * @Assert\NotBlank(message="Merci de saisir votre nom")
-     */
-    private $lastname;
+    private $name;
 
     /**
      * @Assert\NotBlank(message="Merci de saisir votre numéro de téléphone")
@@ -40,6 +34,11 @@ class Contact
     private $birthDate;
 
     /**
+     * @Assert\NotBlank(message="Merci de choisir un thème")
+     */
+    private $items;
+
+    /**
      * @Assert\NotBlank(message="Merci de saisir votre message")
      * @Assert\Length(min=20, max=1500, minMessage="Votre message doit être composé d'au moins {{ limit }} caractères",
      *      maxMessage="Votre email ne peut pas dépasser {{ limit }} caractères")
@@ -49,33 +48,17 @@ class Contact
     /**
      * @return mixed
      */
-    public function getFirstname()
+    public function getName()
     {
-        return $this->firstname;
+        return $this->name;
     }
 
     /**
-     * @param mixed $firstname
+     * @param mixed $name
      */
-    public function setFirstname($firstname): void
+    public function setName($name): void
     {
-        $this->firstname = $firstname;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLastname()
-    {
-        return $this->lastname;
-    }
-
-    /**
-     * @param mixed $lastname
-     */
-    public function setLastname($lastname): void
-    {
-        $this->lastname = $lastname;
+        $this->name = $name;
     }
 
     /**
@@ -124,6 +107,22 @@ class Contact
     public function setBirthDate($birthDate): void
     {
         $this->birthDate = $birthDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * @param mixed $items
+     */
+    public function setItems($items): void
+    {
+        $this->items = $items;
     }
 
     /**
