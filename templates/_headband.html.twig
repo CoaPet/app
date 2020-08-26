@@ -8,20 +8,22 @@
 
         <div class="row justify-content-center my-0">
             <div class="my-0">
-                <h1 CLASS="my-0">{{ title ?? 'COACH PETER' }}</h1>
+                <h1 CLASS="my-0">{{ (title ?? 'COACH PETER')|upper }}</h1>
             </div>
         </div>
 
         <div class="row justify-content-center mb-3">
             <div class="col-8 col-lg-10 d-flex justify-content-center my-0">
-                <p class="mb-0 main-font-light medium-17-font-size text-white">{{ (underTitle ?? '')|upper }}</p>
+                <p class="mb-0 main-font-light medium-17-font-size {{ app.request.pathInfo==path('app_index') ? 'text-white' : 'flashy' }}">{{ (underTitle ?? '')|upper }}</p>
             </div>
         </div>
 
+        {% if app.request.pathInfo==path('app_index') %}
         <div class="row justify-content-center">
             <div class="col-10 d-flex justify-content-center">
-                <a href="{{ path('app_contact') }}" class="btn border-light">BESOIN D'UN COACHING ?</a>
+                <a href="{{ path('app_contact') }}" class="btn">BESOIN D'UN COACHING ?</a>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>

@@ -22,7 +22,7 @@ class ActualityController extends AbstractController
         return $this->render('actuality/index.html.twig', [
             'coachInfo' => $coachInfo,
             'actualities' => $actualityRepository->findBy([], ['date' => 'desc']),
-            'title' => 'Actualité',
+            'title' => 'Actualités',
             'underTitle' => 'Suivez mes conseils, au jour le jour',
         ]);
     }
