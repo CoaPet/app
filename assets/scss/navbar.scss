@@ -121,8 +121,20 @@ header {
         color: $light;
     }
 
+    a:hover{
+        text-decoration: none;
+        color: $flashy;
+    }
+
     .ss-menu-activities{
         left: -75px;
+    }
+
+    .btn:hover{
+        border-color: $flashy;
+    }
+    .btn{
+        border-color: $light;
     }
 }
 .griffe{
