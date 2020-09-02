@@ -3,16 +3,19 @@
         object-fit: contain;
         transform: rotate(12deg);
         max-height: 45vh;
-        box-shadow: -2px 2px 2px 0 $shadow;
         margin-bottom: 50px;
+        box-shadow: none;
     }
-
     .polaroid_img{
         overflow: hidden;
         height: 125px;
         width: 150px;
     }
     .pola{
-        top:650px;
+        top:725px;
     }
+}
+.blue_bottom{
+    height: 50px;
+    background-color: $primary;
 }
