@@ -42,14 +42,16 @@
     <div class="col-md-5">
         <div class="pola position-absolute">
             <div class="picture_duo first_image position-relative bg-light col-lg-12 p-2">
-                <div class="overflow-hidden polaroid_img m-auto bg-secondary">
-                    <img class="w-100 my-auto" src="{{ asset('build/peter.png') }}" alt="Peter">
+                <div class="overflow-hidden polaroid_img m-auto bg-light">
+                    <img class="w-100 my-auto" src="{{ asset('build/peter_contact.jpg') }}" alt="Peter">
                 </div>
-                <div class="text-center text-primary font-italic size-26">
+                <div class="text-center text-primary semi-large-font-size-28 hand-font">
                     A très vite
                 </div>
             </div>
         </div>
     </div>
 </section>
+    <div class="blue_bottom mb-0"></div>
+    {% include 'map.html.twig' %}
 {% endblock %}

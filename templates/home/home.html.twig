@@ -2,52 +2,6 @@
 
 {% block title %}Accueil Coach Peter{% endblock %}
 
-{% block head %}
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=default" defer></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX_HfMTaQdYgBbAtZ1UFmnma1ffQshm3c&callback=initMap&libraries=&v=weekly"
-                defer
-        ></script>
-        <style type="text/css">
-            /* Always set the map height explicitly to define the size of the div
-             * element that contains the map. */
-            #map {
-                filter: grayscale(90%) blur(0.1px);
-                height: 400px;
-            }
-
-        </style>
-        <script>
-            "use strict";
-            let map;
-
-            function initMap() {
-                map = new google.maps.Map(document.getElementById("map"), {
-                    center: {
-                        lat: 47.892862,
-                        lng: 1.900613
-                    },
-                    styles: [
-                        {
-                            featureType: 'landscape',
-                            "stylers": [
-                                { 'color': '#FDFFFD' }
-                            ]
-                        },
-                        {
-                            featureType: 'road',
-                            "stylers": [
-                                { 'color': '#DDFFDD' }
-                            ]
-                        }
-                        ],
-                    mapTypeControl: false,
-                    streetViewControl: false,
-                    zoom: 15
-                });
-            }
-        </script>
-{% endblock %}
-
 {% block body %}
 
     <div class="position-relative min-vw-100">
@@ -57,6 +11,6 @@
     {% include 'home/_about_me.html.twig' %}
     {% include 'home/_before_after.html.twig' %}
     {% include 'home/_actuality.html.twig' %}
-    {% include 'home/_map.html.twig' %}
+    {% include 'map.html.twig' %}
 {% endblock %}
 
