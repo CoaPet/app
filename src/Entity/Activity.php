@@ -88,7 +88,7 @@ class Activity
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="integer", nullable=true
+     * @ORM\Column(type="integer", nullable=true)
      * @Assert\Range(min=1, max=10, notInRangeMessage="L'intensité du cours ne peux dépasser 10 flammes.")
      */
     private $intensity;
