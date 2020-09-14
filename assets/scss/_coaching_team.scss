@@ -1,4 +1,4 @@
-.card-coach-activity:nth-of-type(odd) {
+.card-coach-activity:nth-of-type(even) {
     flex-direction: row-reverse;
     justify-content: flex-end;
     padding-top: 75px;
@@ -8,6 +8,10 @@
     background-color: $primary;
 }
 
+.card-coach-activity:hover{
+    background-color: $primary;
+    transition: 0.3s;
+}
 
 .activity-cadre {
     z-index: 50;
