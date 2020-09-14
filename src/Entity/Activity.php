@@ -87,6 +87,26 @@ class Activity
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $intensity;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $maxparticipation;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $effort;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $coachsentence;
+
 
     public function getId(): ?int
     {
@@ -182,5 +202,53 @@ class Activity
         if ($activityFile) {
             $this->updatedAt = new DateTime('now');
         }
+    }
+
+    public function getIntensity(): ?int
+    {
+        return $this->intensity;
+    }
+
+    public function setIntensity(?int $intensity): self
+    {
+        $this->intensity = $intensity;
+
+        return $this;
+    }
+
+    public function getMaxparticipation(): ?int
+    {
+        return $this->maxparticipation;
+    }
+
+    public function setMaxparticipation(?int $maxparticipation): self
+    {
+        $this->maxparticipation = $maxparticipation;
+
+        return $this;
+    }
+
+    public function getEffort(): ?string
+    {
+        return $this->effort;
+    }
+
+    public function setEffort(?string $effort): self
+    {
+        $this->effort = $effort;
+
+        return $this;
+    }
+
+    public function getCoachsentence(): ?string
+    {
+        return $this->coachsentence;
+    }
+
+    public function setCoachsentence(?string $coachsentence): self
+    {
+        $this->coachsentence = $coachsentence;
+
+        return $this;
     }
 }

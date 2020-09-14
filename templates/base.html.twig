@@ -12,7 +12,7 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    <body{% if app.request.pathInfo != path('app_index') %} class="bg-radiant"{% endif %}>
     {% block navbar %}
 
     {% endblock %}
