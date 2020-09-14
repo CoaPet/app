@@ -88,22 +88,20 @@ class Activity
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true
+     * @Assert\Range(min=1, max=10, notInRangeMessage="L'intensité du cours ne peux dépasser 10 flammes.")
      */
     private $intensity;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Range(min=1, max=50, notInRangeMessage="Lnombre de places doit être entre 1 & 50.")
      */
     private $maxparticipation;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $effort;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=255, maxMessage="Le message est trop long, il ne doit pas dépasser {{ limit }} caractères")
      */
     private $coachsentence;
 
@@ -224,18 +222,6 @@ class Activity
     public function setMaxparticipation(?int $maxparticipation): self
     {
         $this->maxparticipation = $maxparticipation;
-
-        return $this;
-    }
-
-    public function getEffort(): ?string
-    {
-        return $this->effort;
-    }
-
-    public function setEffort(?string $effort): self
-    {
-        $this->effort = $effort;
 
         return $this;
     }
