@@ -3,7 +3,17 @@
 {% block title %}Coaching{% endblock %}
 
 {% block body %}
+<div class="intro nav-font small-font-size text-center bg-white">
+    <section>
+    <p>Expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum,</p>
 
+
+    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat</p>
+
+
+    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
+    </section>
+</div>
     <section id="coaching">
         {% for activity in activities %}
         <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">
@@ -18,10 +28,15 @@
                         <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
                 </div>
                 <div class="nav-font small-font-size">
-                    <p class="">{{ activity.description|raw }}</p>
-                    <p class="my-0 nav-font-semi-bold">Intensité : </p>
-                    <p class="my-0 nav-font-semi-bold">Le + : </p>
-                    <p class="my-0 nav-font-semi-bold">Le mot du coach :
+                    <p class="mb-1">{{ activity.description|raw }}</p>
+                    {% if activity.intensity %}
+                    <p class="my-0 nav-font-semi-bold mb-1">Intensité :
+                    {% for i in 1..activity.intensity %}
+                        <img class="mx-1" src="{{ asset('build/fire.svg') }}"/>
+                    {% endfor %}</p>
+                    {% endif %}
+                    <p class="my-0 nav-font-semi-bold mb-1">Le + : </p>
+                    <p class="my-0 nav-font-semi-bold mb-1">Le mot du coach :
 
                     </p>
                 </div>
