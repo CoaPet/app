@@ -22,8 +22,18 @@
 body {
     width: 100vw;
     overflow-x: hidden;
-    background-color: $ultra-light;
     font-family: 'Qanelas';
+    background-color: $ultra-light;
+}
+.bg-radiant{
+    background: linear-gradient(to left, #00354C, #196B84);
+}
+.intro{
+    padding: 55px 0 110px 0;
+}
+#road{
+    padding: 20px 0;
+    background-color: $ultra-light;
 }
 
 h1 {
