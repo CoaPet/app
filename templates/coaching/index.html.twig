@@ -29,7 +29,7 @@
                 </div>
                 <div class="nav-font small-font-size">
                     <p class="mb-1">{{ activity.description|raw }}</p>
-                    {% if activity.intensity %}
+                    {% if activity.intensity is defined %}
                     <p class="my-0 nav-font-semi-bold mb-1">Intensité :
                     {% for i in 1..activity.intensity %}
                         <img class="mx-1" src="{{ asset('build/fire.svg') }}"/>
