@@ -107,7 +107,6 @@ class Activity
      */
     private $more;
 
-
     public function getId(): ?int
     {
         return $this->id;
