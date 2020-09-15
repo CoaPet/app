@@ -56,6 +56,8 @@ class ActivityType extends AbstractType
 
             ->add('maxparticipation')
 
+            ->add('more')
+
             ->add('coachsentence');
     }
 

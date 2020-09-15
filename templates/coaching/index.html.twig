@@ -35,8 +35,8 @@
                         <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>
                     {% endfor %}</p>
                     {% endif %}
-                    {% if activity.maxparticipation %}
-                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.maxparticipation ?? '' }}</p>
+                    {% if activity.more %}
+                        <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.more ?? '' }}</p>
                     {% endif %}
                     {% if activity.coachsentence %}
                     <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
