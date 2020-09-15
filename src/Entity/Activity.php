@@ -102,7 +102,6 @@ class Activity
      */
     private $coachsentence;
 
-
     public function getId(): ?int
     {
         return $this->id;
