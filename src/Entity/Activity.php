@@ -100,11 +100,6 @@ class Activity
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $effort;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
     private $coachsentence;
 
 
@@ -224,18 +219,6 @@ class Activity
     public function setMaxparticipation(?int $maxparticipation): self
     {
         $this->maxparticipation = $maxparticipation;
-
-        return $this;
-    }
-
-    public function getEffort(): ?string
-    {
-        return $this->effort;
-    }
-
-    public function setEffort(?string $effort): self
-    {
-        $this->effort = $effort;
 
         return $this;
     }
