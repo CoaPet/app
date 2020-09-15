@@ -102,6 +102,11 @@ class Activity
      */
     private $coachsentence;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $more;
+
 
     public function getId(): ?int
     {
@@ -231,6 +236,18 @@ class Activity
     public function setCoachsentence(?string $coachsentence): self
     {
         $this->coachsentence = $coachsentence;
+
+        return $this;
+    }
+
+    public function getMore(): ?string
+    {
+        return $this->more;
+    }
+
+    public function setMore(?string $more): self
+    {
+        $this->more = $more;
 
         return $this;
     }
