@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/svg" href="{{ asset('build/favicon.svg')}}"/>
+        {% block head %}
+        {% endblock %}
+        {% block meta %} {% endblock %}
+        <title>{% block title %}Coach Peter{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    {% block navbar %}
+
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script>
+            $(document).ready(function() {
+                // you may need to change this code if you are not using Bootstrap Datepicker
+                $('.js-datepicker').datepicker({
+                    format: 'dd-mm-yyyy'
+                });
+            });
+        </script>
+    {% endblock %}
+
+        {% block footer %}
+        {% endblock %}
+    </body>
+</html>

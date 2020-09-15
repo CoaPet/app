@@ -35,14 +35,27 @@
                         <img class="mx-1" src="{{ asset('build/fire.svg') }}"/>
                     {% endfor %}</p>
                     {% endif %}
-                    <p class="my-0 nav-font-semi-bold mb-1">Le + : </p>
-                    <p class="my-0 nav-font-semi-bold mb-1">Le mot du coach :
-
-                    </p>
+                    {% if activity.maxparticipation %}
+                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.maxparticipation ?? '' }}</p>
+                    {% endif %}
+                    {% if activity.coachsentence %}
+                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
     </section>
-
+<div class="row text-light bg-primary h-200">
+    <div id="biodyxpert" class="col-4 text-right">
+        <img class="mt-4" src="{{ asset('build/biodyxpert.png') }}" alt="biodyXpert"/>
+    </div>
+    <div class="col-8 text-left small-14-font-size nav-font">
+        <span class="nav-font-bold">BIODY EXPERT</span><br/>
+        Rum, nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus
+        partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat rum.    </div>
+</div>
+    <div class="text-center bg-light h-500">
+        Etapes
+    </div>
 {% endblock %}
