@@ -50,7 +50,13 @@ class ActivityType extends AbstractType
 
             ->add('category', ChoiceType::class, ['choices' => Activity::CATEGORY])
 
-            ->add('focus');
+            ->add('focus')
+
+            ->add('intensity')
+
+            ->add('maxparticipation')
+
+            ->add('coachsentence');
     }
 
     public function configureOptions(OptionsResolver $resolver)
