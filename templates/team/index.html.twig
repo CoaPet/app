@@ -4,32 +4,55 @@
     {% block title %}Team Training{% endblock %}
 
 {% block body %}
+    <div class="intro nav-font small-font-size text-center bg-white">
+        <section>
+            <p>Expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum,</p>
+
+
+            <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat</p>
+
+
+            <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
+        </section>
+    </div>
     <section>
         {% for activity in activities %}
             <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">
-                <div class="overflow-hidden card-act-image col-12 col-md-5 text-center">
-                    <img class="image-activity w-100" src="{{ vich_uploader_asset(activity, 'activityFile') }}"
-                         alt="{{ activity.title }}">
-                </div>
-                <div class="col-md-7 d-flex flex-column">
-                    <div class="w-100 text-center">
-                        <div class="badge-coaching d-flex justify-content-center align-items-center text-primary mx-auto" >
-                            {% if activity.pictogram %}
-                                <img src="{{ asset('build/pictograms/' ~ activity.pictogram ~ '.svg') }}" alt="pictogramme de l'activité">
-                            {% else %}
-                                <img class="w-50" src="{{ asset('build/running.svg')}}" alt="pictogramme de l'activité">
-                            {% endif %}
-                        </div>
-                        <h2 class="w-100 text-center text-primary">{{ activity.title|upper }}</h2>
+                <div class="overflow-hidden card-act-image mx-auto">
+                    <div class="align_center">
+                        <img class="image-activity" src="{{ vich_uploader_asset(activity, 'activityFile') }}"
+                             alt="{{ activity.title }}">
                     </div>
-                    <div class="p-md-5">
-                        <p class="">{{ activity.description|raw }}</p>
-                        <a href="{{ path('app_contact') }}" class="btn btn-light border-primary text-primary">ME CONTACTER</a>
+                </div>
+                <div class="col-md-8 d-flex flex-column text-light">
+                    <div class="w-100 text-left">
+                        <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
+                    </div>
+                    <div class="nav-font small-font-size">
+                        <p class="mb-1">{{ activity.description|raw }}</p>
+                        {% if activity.intensity is defined %}
+                            <p class="my-0 nav-font-semi-bold mb-1">Intensité :
+                                {% for i in 1..activity.intensity %}
+                                    <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>
+                                {% endfor %}</p>
+                        {% endif %}
+                        {% if activity.more %}
+                            <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.more ?? '' }}</p>
+                        {% endif %}
+                        {% if activity.coachsentence %}
+                            <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         {% endfor %}
     </section>
 
-{%  include('team/_planning.html.twig') %}
+    <div class="text-center bg-light col">
+        <p class="py-4 my-0 main-font-bold medium-font-size">LE PLANNING DE COURS</p>
+        <img src="{{ asset('uploads/planning/'~coachInfo.planning) }}" alt="planning"><br/>
+        <p class="my-2 btn btn-light text-primary border-primary nav-font-semi-bold small-14-font-size">INTÉRESSÉ PAR UN COURS ?</p>
+    </div>
+
+    {% include 'map.html.twig' %}
 {% endblock %}
