@@ -1,5 +1,15 @@
 <div class="map-responsive w-100 mx-0 d-none d-lg-block">
-    <div id="map"></div>
+    <div class="overflow-hidden h-400">
+        <div class="w-100" id="div-map" style="margin-top:-150px">
+        <iframe id="map"
+                width="100%"
+                height="700"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDc2RPl2_cXYs75hlIpb4utRVfOJp4AV08
+    &q=Coach+Peter,Orléans" allowfullscreen>
+        </iframe>
+        </div>
+    </div>
     <div class="card-adress p-3 ">
         <img class="p-2 logo" src="{{ asset('build/peter_logo_colored.png') }}">
         <div class="d-none d-md-block localisation position-absolute">
