@@ -51,7 +51,7 @@
     <div class="text-center bg-light col">
         <p class="py-4 my-0 main-font-bold medium-font-size">LE PLANNING DE COURS</p>
         <img src="{{ asset('uploads/planning/'~coachInfo.planning) }}" alt="planning"><br/>
-        <p class="my-2 btn btn-light text-primary border-primary nav-font-semi-bold small-14-font-size">INTÉRESSÉ PAR UN COURS ?</p>
+        <a href="{{ path('app_contact') }}" class="my-5 btn text-primary border-primary nav-font-semi-bold small-14-font-size">INTÉRESSÉ PAR UN COURS ?</a>
     </div>
 
     {% include 'map.html.twig' %}

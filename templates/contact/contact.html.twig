@@ -33,7 +33,8 @@
             <div class="float-left col">{{ form_label(form.message) }} * <span class="main-font-semi-bold">(Obligatoire)</span></div>
             <div class="col text-danger">{{ form_errors(form.message) }}</div>
             {{ form_widget(form.message) }}
-            <small class="float-left text-muted">{{ form_help(form.message) }}</small>
+            <div class="w-100"><small class="float-left text-muted">{{ form_help(form.message) }}</small>
+            </div>
 
             <div class="mt-5 text-left"><button class="btn border-primary nav-font-semi-bold small-14-font-size">ENVOYER</button></div>
             {{ form_end(form) }}
@@ -52,6 +53,5 @@
         </div>
     </div>
 </section>
-    <div class="blue_bottom mb-0"></div>
     {% include 'map.html.twig' %}
 {% endblock %}
