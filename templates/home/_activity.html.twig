@@ -39,12 +39,7 @@
                 </div>
                 </a>
                 <div class="col-12 text-center p-3">
-                    <a
-                            {% for itemLabel, itemRoute in itemsActivity %}
-                                {% if activity.category == itemLabel %}
-                                    href="{{ itemRoute }}"
-                                {% endif %}
-                            {% endfor %}
+                    <a href="{{ path('app_contact') }}"
                             class="btn border-primary text-primary nav-font-semi-bold xxs-font-size">ME CONTACTER</a>
                 </div>
             </div>

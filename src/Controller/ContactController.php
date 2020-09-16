@@ -11,6 +11,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Libs\RecaptchaBundle;
+use Libs\RecaptchaBundle\Type\RecaptchaSubmitType;
 
 class ContactController extends AbstractController
 {
@@ -33,13 +35,13 @@ class ContactController extends AbstractController
                 ->to('peter.dionisiopro@gmail.com')
                 ->subject('coach-peter.com : un nouveau message du formulaire de contact')
                 ->html($this->renderView('contact/mail.html.twig', [
-                    'contact' => $contact
+                    'contact' => $contact,
                 ]));
 
             $mailer->send($email);
             $this->addFlash('success', 'Votre message a bien été envoyé. Le Coach Peter reviendra vers vous
             d\'ici peu');
-            return $this->redirectToRoute('app_contact');
+            return $this->redirectToRoute('app_index');
         }
         return $this->render('contact/contact.html.twig', [
             'coachInfo' => $coachInfo,
