@@ -18,11 +18,17 @@
         position: absolute;
         --card-spacing:100px;
         --card-height:calc(var(--map-height) - 100px);
-        left:50%;
-        top:calc((var(--map-height) - 225px) / 2);
+        //left:50%;
+        //top:calc((var(--map-height) - 225px) / 2);
+        --width-card:170px;
+        left: calc(100vw - var(--width-card));
+        top: 5px;
         background-color: rgba(255,255,255,0.9);
-        width: 316px;
-        height: 225px;
+        width: --width-card;
     }
 
+}
+
+#div-map {
+    filter: grayscale(95%);
 }
