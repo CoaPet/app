@@ -61,12 +61,11 @@
     font-family: 'Montserrat Black';
     src: url("../fonts/Montserrat/Montserrat-Black.ttf");
 }
-
 $primary: #00384f;
-$primary-transparent: rgba(0,56,79,0.9);
+$primary-transparent: rgba($primary,0.9);
 $secondary: #85c041;
 $flashy: #00ffff;
-$secondary-transparent: rgba(133,192,65,0.4);
+$secondary-transparent: rgba($secondary,0.4);
 
 $lightgray: #f7f7f7;
 $darkgray: #6a6b6a;
