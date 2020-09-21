@@ -6,6 +6,14 @@
        margin-right: 38px;
     }
 }
+
+#actuality .card{
+    border-width: 0;
+}
+#actuality .btn{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
 .card-actu .badge {
     background-color: $primary;
     color: $light;
