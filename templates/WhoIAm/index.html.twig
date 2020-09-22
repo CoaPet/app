@@ -1,10 +1,10 @@
 {% extends 'base_user.html.twig' %}
 
 {% block body %}
-<section class="whoami mb-5">
+<div class="whoami mb-5">
     <div class="row">
         <div class="col">
-            <div class="row my-5 d-flex justify-content-center">
+            <div class="row mt-5 mb-2 d-flex justify-content-center">
                 <div class="col-4 d-flex justify-content-center">
                     <div class="col text-center">
                         <img class="img-coach-about-me-home w-100"
@@ -78,80 +78,112 @@
             </div>
         </div>
     </div>
-
-    <div class="col-4 d-flex flex-row offset-md-4 my-3">
+    <div class="accompagne col-4 d-flex flex-row offset-md-4 mb-5">
         <h3 class="mr-md-4 font-italic semi-large-font-size">
             Je vous accompagne pour
         </h3>
-        <img src="{{ asset('build/path.png') }}" alt="flèche descendante" class="downarrow">
+        <img src="{{ asset('build/whoiam/arrow.svg') }}" alt="flèche descendante" class="downarrow">
     </div>
 
-    <div class="row">
-        <div class="col-md-6 d-flex align-items-center flex-column">
-            <img src="{{ asset('build/whoiam/lostpound.png') }}" alt="Peter et une coachée" class="w-75">
-        </div>
-
-            <div class="col-md-6">
-                <h2 ><span class="number">1</span>.PERTE DE POIDS</h2>
-                <p>
-                    Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :<br>
-                <ul class="font-weight-bold">
-                    <li>Alimentation</li>
-                    <li>Sommeil</li>
-                    <li>Bien-être mental</li>
-                    <li>Activité physique</li></ul>
-
-                    Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.
-                </p>
+    <div class="bg-radiant py-5 text-light ">
+        <div class="bloc_wia row col-10 offset-1">
+            <div class="overflow-hidden card-act-image mx-auto">
+                <div class="align_center">
+                    <img class="image-activity" src="{{ asset('build/whoiam/lost_pound.jpg') }}"
+                         alt="Perte de poids">
+                </div>
+            </div>
+            <div class="col-md-7 offset-1">
+                <div class="col-8">
+                    <h2 ><span class="number">1</span>.PERTE DE POIDS</h2>
+                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
+                    <ul class="font-weight-bold">
+                        <li>Alimentation</li>
+                        <li>Sommeil</li>
+                        <li>Bien-être mental</li>
+                        <li>Activité physique</li>
+                    </ul>
+                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
+                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
+                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
+                </div>
             </div>
         </div>
+
+        <div class="bloc_wia row col-10 offset-1">
+            <div class="overflow-hidden card-act-image mx-auto">
+                <div class="align_center">
+                    <img class="image-activity" src="{{ asset('build/whoiam/posture_dos.jpg') }}"
+                         alt="Postures et dos">
+                </div>
+            </div>
+            <div class="col-md-7 offset-1">
+                <div class="col-8">
+                    <h2 ><span class="number">2</span>.POSTURE ET DOS</h2>
+                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
+                    <ul class="font-weight-bold">
+                        <li>Alimentation</li>
+                        <li>Sommeil</li>
+                        <li>Bien-être mental</li>
+                        <li>Activité physique</li>
+                    </ul>
+                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
+                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
+                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bloc_wia row col-10 offset-1">
+            <div class="overflow-hidden card-act-image mx-auto">
+                <div class="align_center">
+                    <img class="image-activity" src="{{ asset('build/whoiam/remise_forme.jpg') }}"
+                         alt="Remise en forme">
+                </div>
+            </div>
+            <div class="col-md-7 offset-1">
+                <div class="col-8">
+                    <h2 ><span class="number">3</span>.REMISE EN FORME</h2>
+                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
+                    <ul class="font-weight-bold">
+                        <li>Alimentation</li>
+                        <li>Sommeil</li>
+                        <li>Bien-être mental</li>
+                        <li>Activité physique</li>
+                    </ul>
+                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
+                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
+                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bloc_wia row col-10 offset-1">
+            <div class="overflow-hidden card-act-image mx-auto">
+                <div class="align_center">
+                    <img class="image-activity" src="{{ asset('build/whoiam/masse_musculaire.jpg') }}"
+                         alt="Masse musculaire">
+                </div>
+            </div>
+            <div class="col-md-7 offset-1">
+                <div class="col-8">
+                    <h2 ><span class="number">4</span>.PRISE DE MASSE MUSCULAIRE</h2>
+                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
+                    <ul class="font-weight-bold">
+                        <li>Alimentation</li>
+                        <li>Sommeil</li>
+                        <li>Bien-être mental</li>
+                        <li>Activité physique</li>
+                    </ul>
+                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
+                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
+                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-
-        <div class="row mt-5 flex-column-reverse flex-md-row">
-            <div class="col-md-6">
-                <h2><span class="number">2</span>.POSTURE ET DOS</h2>
-                <p>
-                    Certifié en méthode Pilates, je vous propose un accompagnement sur mesure afin d’améliorer votre posture
-                    et de renforcer votre dos et ses muscles périphériques.
-                </p>
-            </div>
-
-            <div class=" col-md-6 d-flex align-items-center flex-column">
-                <img src="{{ asset('build/whoiam/posture.png') }}" alt="Selfie de Peter" class="w-75">
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-md-6 d-flex align-items-center flex-column">
-                <img src="{{ asset('build/whoiam/forme.png') }}" alt="Selfie de Peter" class="w-75">
-            </div>
-
-            <div class="col-md-6">
-                <h2><span class="number">3</span>.REMISE EN FORME</h2>
-                <p>
-                    Vous souhaitez commencer ou reprendre une activité physique en toute sécurité ?<br>
-                    Je vous propose des séances variées et adaptées afin d’améliorer votre condition physique et
-                    votre bien-être mental.
-                </p>
-            </div>
-        </div>
-
-        <div class="row mt-5 flex-column-reverse flex-md-row">
-            <div class="col-md-6">
-                <h2><span class="number">4</span>.PRISE DE MASSE MUSCULAIRE</h2>
-                <p>
-                    Votre objectif et de développer votre masse musculaire ?<br>
-                    Je vous propose un accompagnement complet pour atteindre votre objectif efficacement
-                    et sans vous blesser.
-                    Entraînement adapté,
-                    alimentation et sommeil sont les 3 clés pour votre réussite.
-                </p>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-center flex-column">
-                <img src="{{ asset('build/whoiam/musculaire.png') }}" alt="Selfie de Peter" class="w-75">
-            </div>
-        </div>
     </section>
 
     <div class="row justify-content-center mt-5 mb-0 pb-0 w-100 meet">
@@ -160,7 +192,7 @@
         </h4>
     </div>
 
-    <div class=" d-none d-md-flex justify-content-center ">
+    <div class="d-none d-md-flex justify-content-center col-10 offset-1">
         <img src="{{ asset('build/whoiam/desktoptimeline.svg') }}" class="timeline" alt="timeline d'un coaching" >
     </div>
 

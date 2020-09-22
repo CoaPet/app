@@ -42,3 +42,16 @@
 .timeline {
     width: 75%;
 }
+.accompagne{
+    height: 20px;
+    img{
+        height:100px;
+    }
+}
+.bloc_wia{
+    margin-bottom: 120px;
+}
+.bloc_wia:nth-of-type(even)  {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
