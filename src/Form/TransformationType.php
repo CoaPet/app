@@ -39,6 +39,7 @@ class TransformationType extends AbstractType
                 'download_label' => 'Voir l\'image',
                 'delete_label'  => 'Supprimer cette image',
             ])
+            ->add('focus')
         ;
     }
 

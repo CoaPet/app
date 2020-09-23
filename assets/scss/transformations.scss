@@ -7,9 +7,13 @@ $testimony: #444d4f;
 }
 
 .transformations {
-    border-bottom: solid 1px $primary;
-    padding-bottom: 100px;
-
+    padding-top: 100px;
+    h4{
+        color: #3A9EB5;
+    }
+    img {
+        border-radius: 10px;
+    }
     p, span {
         color: $testimony;
     }
@@ -19,4 +23,8 @@ $testimony: #444d4f;
     max-width: 250px;
     max-height: 250px;
     object-fit: cover;
+}
+
+#focus .focus p{
+    color: $light;
 }

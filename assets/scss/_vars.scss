@@ -58,6 +58,10 @@
 }
 
 @font-face {
+    font-family: 'Montserrat Bold Italic';
+    src: url("../fonts/Montserrat/Montserrat-BoldItalic.ttf");
+}
+@font-face {
     font-family: 'Montserrat Black';
     src: url("../fonts/Montserrat/Montserrat-Black.ttf");
 }
@@ -86,6 +90,7 @@ $nav-font: Montserrat;
 $nav-font-medium: "Montserrat Medium";
 $nav-font-semi-bold: "Montserrat Semi-Bold";
 $nav-font-bold: "Montserrat Bold";
+$nav-font-bold-italic: "Montserrat Bold Italic";
 $nav-font-light: "Montserrat Light";
 $nav-font-black: "Montserrat Black";
 $caption-font: Raleway;
