@@ -62,12 +62,21 @@ class AdminTransformationController extends AbstractController
     /**
      * @Route("/{id}/edit", name="transformation_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Transformation $transformation): Response
-    {
+    public function edit(
+        Request $request,
+        TransformationRepository $transfRepository,
+        transformation $transformation
+    ): Response {
         $form = $this->createForm(TransformationType::class, $transformation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if ($_POST['transformation']['focus'] == true) {
+                $transfocus = $transfRepository->findOneBy(['focus' => true]);
+                if (isset($transfocus)) {
+                    $transfocus->setFocus(false);
+                }
+            }
             $this->getDoctrine()->getManager()->flush();
             $this->addFlash('success', 'La mise à jour a bien été effectuée');
 

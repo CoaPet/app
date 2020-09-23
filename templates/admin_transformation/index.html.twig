@@ -21,7 +21,7 @@
         </thead>
         <tbody>
         {% for transformation in transformations %}
-            <tr class="row mx-0">
+            <tr class="row mx-0 {% if transformation.focus == 'true' %} border border-primary {% endif %}">
                 <td class="col-2 m-auto">{{ transformation.name }}</td>
                 <td class="col-2 m-auto">{{ transformation.pound }}</td>
                 <td class="col-3 m-auto"><img class="w-50" src="{{ vich_uploader_asset(transformation, 'pictureBeforeFile')}}" alt="Photo avant la perte de poids de {{ transformation.name }}"></td>
