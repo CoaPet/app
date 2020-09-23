@@ -98,6 +98,11 @@ class Transformation
      */
     private $title;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $focus;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -197,6 +202,18 @@ class Transformation
     public function setTitle(?string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getFocus(): ?bool
+    {
+        return $this->focus;
+    }
+
+    public function setFocus(bool $focus): self
+    {
+        $this->focus = $focus;
 
         return $this;
     }
