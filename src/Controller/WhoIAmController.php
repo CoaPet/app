@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Transformation;
+use App\Entity\Timeline;
 
 class WhoIAmController extends AbstractController
 {
@@ -27,6 +28,7 @@ class WhoIAmController extends AbstractController
             ->findAll();
 
         return $this->render('WhoIAm/index.html.twig', [
+            'etapes' => Timeline::TIMELINE,
             'degrees' => $coachDegrees,
             'coachInfo' => $coachInfo,
             'title' => 'Qui suis-je ?',
