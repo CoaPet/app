@@ -18,6 +18,7 @@
 @import "transformations";
 @import "whoami";
 @import "footer";
+@import "time";
 
 @for $i from 1 through 6 {
     .h-#{$i}00 {
