@@ -1,4 +1,4 @@
-<div class="timeline mx-auto mb-3 d-flex">
+<div class="timeline mx-auto mb-3 d-flex bg-white">
     <div class="blocs mx-auto row">
         {% for etape in etapes %}
         <div class="bloc">
@@ -17,7 +17,7 @@
                 <div class="picto d-flex border-blue-{{ loop.index }}"><img class="m-auto color-blue-{{ loop.index }}" src="{{ asset('build/tel.svg') }}" alt="picto" /></div>
             </div>
             <div class="text">
-                <p class="title">{{ etape.title }}</p>
+                <p class="title">{{ etape.title|upper }}</p>
                 <p class="under-title">{{ etape.undertitle }}</p>
                 <p class="description">{{ etape.text }}</p>
             </div>
