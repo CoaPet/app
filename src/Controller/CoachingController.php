@@ -9,6 +9,7 @@ use App\Repository\ActivityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Timeline;
 
 class CoachingController extends AbstractController
 {
@@ -26,6 +27,7 @@ class CoachingController extends AbstractController
             ->findBy(['category'=>'coaching']);
 
         return $this->render('coaching/index.html.twig', [
+            'etapes' => Timeline::COACHING,
             'coachInfo' => $coachInfo,
             'activities' => $activities,
             'title' => 'Coaching',

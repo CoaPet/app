@@ -28,7 +28,7 @@ class WhoIAmController extends AbstractController
             ->findAll();
 
         return $this->render('WhoIAm/index.html.twig', [
-            'etapes' => Timeline::TIMELINE,
+            'etapes' => Timeline::WHOIAM,
             'degrees' => $coachDegrees,
             'coachInfo' => $coachInfo,
             'title' => 'Qui suis-je ?',

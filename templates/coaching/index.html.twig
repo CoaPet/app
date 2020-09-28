@@ -58,14 +58,16 @@
         parium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat rum.</p>
     </div>
 </div>
-    <div class="text-center bg-light">
-        <p class="py-3 main-font-bold medium-font-size">LES ÉTAPES DU COACHING</p>
-        <img src="{{ asset('build/whoiam/desktoptimeline.svg') }}" alt="timeline"/>
+    <div class="bg-white text-center py-4">
+        <p class="py-5 mb-0 main-font-bold medium-font-size">LES ÉTAPES DU COACHING</p>
     </div>
-
-    <div class="py-5 br-light text-center bg-light">
+    <div class="w-100 bg-white py-3 mb-0">
+    {% include 'time.html.twig' %}
+    </div>
+    <div class="py-5 br-light text-center bg-white">
         <a class="btn border-primary text-primary nav-font-semi-bold small-14-font-size"  href="{{ path('app_contact') }}">FAIRE UNE SESSION D'ESSAI</a>
     </div>
+
 
     {% include 'map.html.twig' %}
 {% endblock %}
