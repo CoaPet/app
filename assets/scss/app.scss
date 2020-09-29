@@ -32,6 +32,12 @@ body {
     font-family: 'Qanelas';
     background-color: $ultra-light;
 }
+svg {
+    fill: currentColor;
+}
+.pictograms{
+    fill: currentColor;
+}
 .bg-radiant{
     background: linear-gradient(to left, #00354C, #196B84);
 }
