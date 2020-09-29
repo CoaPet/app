@@ -14,7 +14,11 @@
             <div class="double-booble position-relative px-0">
                 <div class="round border-blue-{{ loop.index }}"></div>
                 <div class="link border-blue-{{ loop.index }}"></div>
-                <div class="picto d-flex border-blue-{{ loop.index }}"><img class="m-auto color-blue-{{ loop.index }}" src="{{ asset('build/tel.svg') }}" alt="picto" /></div>
+                <div class="picto d-flex color-blue-{{ loop.index }} border-blue-{{ loop.index }}">
+                    <div class="m-auto">
+                        {% include('pictograms/' ~  (etape.picto)) %}
+                    </div>
+                </div>
             </div>
             <div class="text">
                 <p class="title">{{ etape.title|upper }}</p>
@@ -23,74 +27,5 @@
             </div>
         </div>
         {% endfor %}
-{#        <div class="bloc">#}
-{#            <div class="etape row m-0">#}
-{#                <div class="arrow-begin">#}
-{#                </div>#}
-{#                <div class="arrow-corpus d-flex">#}
-{#                    <div class="num-etape m-auto">ÉTAPE 2</div>#}
-{#                </div>#}
-{#                <div class="arrow-point">#}
-{#                </div>#}
-
-{#            </div>#}
-{#            <div class="double-booble position-relative px-0">#}
-{#                <div class="round"></div>#}
-{#                <div class="link"></div>#}
-{#                <div class="picto d-flex"><img class="m-auto" src="{{ asset('build/tel.svg') }}" alt="picto" /></div>#}
-{#            </div>#}
-{#            <div class="text">#}
-{#                <p class="title">PRISE DE RDV</p>#}
-{#                <p class="under-title">Fixer une date</p>#}
-{#                <p class="description">Après nos premiers échanges, je vous propose un rdv au studio pour se rencontrer.</p>#}
-{#            </div>#}
-{#        </div>#}
-
-{#        <div class="bloc">#}
-{#            <div class="etape row m-0">#}
-{#                <div class="arrow-begin">#}
-{#                </div>#}
-{#                <div class="arrow-corpus d-flex">#}
-{#                    <div class="num-etape m-auto">ÉTAPE 3</div>#}
-{#                </div>#}
-{#                <div class="arrow-point">#}
-{#                </div>#}
-
-{#            </div>#}
-{#            <div class="double-booble position-relative px-0">#}
-{#                <div class="round"></div>#}
-{#                <div class="link"></div>#}
-{#                <div class="picto d-flex"><img class="m-auto" src="{{ asset('build/tel.svg') }}" alt="picto" /></div>#}
-{#            </div>#}
-{#            <div class="text">#}
-{#                <p class="title">1ER BILAN</p>#}
-{#                <p class="under-title">Solution proposée</p>#}
-{#                <p class="description">Nous faisons un bilan ensemble de 30mns et je vous propose les meilleures solutions pour atteindre vos objectifs.</p>#}
-{#            </div>#}
-{#        </div>#}
-
-{#        <div class="bloc">#}
-{#            <div class="etape row m-0">#}
-{#                <div class="arrow-begin">#}
-{#                </div>#}
-{#                <div class="arrow-corpus d-flex">#}
-{#                    <div class="num-etape m-auto">ÉTAPE 4</div>#}
-{#                </div>#}
-{#                <div class="arrow-point">#}
-{#                </div>#}
-
-{#            </div>#}
-{#            <div class="double-booble position-relative px-0">#}
-{#                <div class="round"></div>#}
-{#                <div class="link"></div>#}
-{#                <div class="picto d-flex"><img class="m-auto" src="{{ asset('build/tel.svg') }}" alt="picto" /></div>#}
-{#            </div>#}
-{#            <div class="text">#}
-{#                <p class="title">1ERE SEANCE</p>#}
-{#                <p class="under-title">Rdv au studio</p>#}
-{#                <p class="description">C'est parti pour une nouvelle aventure ! 1ère séance pour évaluer votre conditions physique.</p>#}
-{#            </div>#}
-{#        </div>#}
-
     </div>
 </div>
