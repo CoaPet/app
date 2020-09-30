@@ -1,0 +1,73 @@
+{% extends 'base_user.html.twig' %}
+
+{% block title %}Programmes en ligne{% endblock %}
+
+{% block body %}
+<div class="intro nav-font small-font-size text-center bg-white">
+    <section>
+    <p>Expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum,</p>
+
+
+    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat</p>
+
+
+    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
+    </section>
+</div>
+    <section id="coaching">
+        {% for activity in activities %}
+        <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">
+            <div class="overflow-hidden card-act-image mx-auto">
+                <div class="align_center">
+                <img class="image-activity" src="{{ vich_uploader_asset(activity, 'activityFile') }}"
+                     alt="{{ activity.title }}">
+                </div>
+            </div>
+            <div class="col-md-8 d-flex flex-column text-light">
+                <div class="w-100 text-left">
+                        <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
+                </div>
+                <div class="nav-font small-font-size">
+                    <p class="mb-1">{{ activity.description|raw }}</p>
+                    {% if activity.intensity is defined %}
+                    <p class="my-0 nav-font-semi-bold mb-1">Intensité :
+                    {% for i in 1..activity.intensity %}
+                        <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>
+                    {% endfor %}</p>
+                    {% endif %}
+                    {% if activity.more %}
+                        <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.more ?? '' }}</p>
+                    {% endif %}
+                    {% if activity.coachsentence %}
+                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+<div class="row text-light bg-primary py-4 h-100">
+    <div id="biodyxpert" class="col-4 text-right">
+        <div class="position-absolute w-100 text-right px-5">
+            <img class="mt-4" src="{{ asset('build/biodyxpert.png') }}" alt="biodyXpert"/>
+        </div>
+    </div>
+    <div class="col-5 text-left small-14-font-size nav-font">
+        <p class="nav-font-bold">BIODY EXPERT</p>
+        <p>Rum, nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus
+        parium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat rum.</p>
+    </div>
+</div>
+    <div class="bg-white text-center py-4">
+        <p class="py-5 mb-0 main-font-bold medium-font-size">LES ÉTAPES DES PROGRAMMES EN LIGNE</p>
+    </div>
+    <div class="w-100 bg-white py-3 mb-0">
+    {% include 'time.html.twig' %}
+    </div>
+    <div class="py-5 br-light text-center bg-white">
+        <a class="btn border-primary text-primary nav-font-semi-bold small-14-font-size"  href="{{ path('app_login') }}">S'INSCRIRE</a>
+    </div>
+
+
+    {% include 'map.html.twig' %}
+{% endblock %}
