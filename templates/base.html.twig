@@ -12,7 +12,7 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body{% if (app.request.pathInfo == path('app_coaching')) or (app.request.pathInfo == path('index_team_traing')) %} class="bg-radiant"{% endif %}>
+    <body{% if (app.request.pathInfo == path('app_coaching')) or (app.request.pathInfo == path('index_team_traing')) or (app.request.pathInfo == path('app_online')) %} class="bg-radiant"{% endif %}>
     {% block navbar %}
 
     {% endblock %}
