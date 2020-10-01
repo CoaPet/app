@@ -65,4 +65,35 @@ class Timeline
             'text' => 'Languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum.'
         ],
     ];
+
+    const ONLINE = [
+        'ÉTAPE 1'=> [
+            'etape' => 'étape 1',
+            'picto' => 'validation.html.twig',
+            'title' => 'Inscription',
+            'undertitle' => 'Devenez membre',
+            'text' => 'Inscrivez-vous gratuitement en ligne pour accéder à mes offres.'
+        ],
+        'ÉTAPE 2'=> [
+            'etape' => 'étape 2',
+            'picto' => 'calendar.html.twig',
+            'title' => 'Choisissez votre programme',
+            'undertitle' => 'Des programmes adaptés à tous les niveaux',
+            'text' => 'Trouvez le programme qui vous correspond. Les flammes vous guident.'
+        ],
+        'ÉTAPE 3'=> [
+            'etape' => 'étape 3',
+            'picto' => 'validation.html.twig',
+            'title' => 'Finalisez votre adhésion',
+            'undertitle' => 'Les exercices arrivent !',
+            'text' => 'Une fois votre adhésion validée, vous avez accès aux ressources du programme choisi !'
+        ],
+        'ÉTAPE 4'=> [
+            'etape' => 'étape 4',
+            'picto' => 'dumbbell.html.twig',
+            'title' => 'Go, go go !',
+            'undertitle' => 'On peut enfin suer !',
+            'text' => 'Maintenant, c\'est dans vos main... Les exercices se débloquent étape après étape.'
+        ],
+    ];
 }
