@@ -34,6 +34,14 @@ header .line{
 
 }
 
+header .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: 0em;
+        vertical-align: 0.255em;
+        content: "";
+        border: none;
+}
+
 .navbar {
     border-top: solid 1px $light ;
 }
