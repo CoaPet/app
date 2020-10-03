@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Activity;
 use App\Entity\InfoCoach;
+use App\Entity\Program;
 use App\Repository\ActivityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,6 +31,28 @@ class OnlineController extends AbstractController
             'etapes' => Timeline::ONLINE,
             'coachInfo' => $coachInfo,
             'activities' => $activities,
+            'title' => 'Programmes en ligne',
+            'underTitle' => 'Retrouvez la forme, en toute autonomie',
+        ]);
+    }
+
+    /**
+     * @Route("/online/choix", name="app_online_choice")
+     */
+    public function choice() : Response
+    {
+        $coachInfo = $this->getDoctrine()
+            ->getRepository(InfoCoach::class)
+            ->findOneBy([]);
+
+        $programs = $this->getDoctrine()
+            ->getRepository(Program::class)
+            ->findBy(['online'=>true]);
+
+        return $this->render('online/choice_programme.html.twig', [
+            'etapes' => Timeline::ONLINE,
+            'coachInfo' => $coachInfo,
+            'programs' => $programs,
             'title' => 'Programmes en ligne',
             'underTitle' => 'Retrouvez la forme, en toute autonomie',
         ]);

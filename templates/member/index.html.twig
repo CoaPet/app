@@ -3,9 +3,18 @@
 {% block title %}Espace Membre{% endblock %}
 
 {% block body %}
-
+    <div class="w-50 mx-auto row mt-5 text-primary">
+        <div class="col-6">
+            <a href="{{ path('app_contact') }}" class="btn btn-light mb-3">Suivre les cours en présentiel</a>
+            <p>Prendre contact avec le coach pour des cours en groupe ou du suivi individuel.</p>
+        </div>
+        <div class="col-6">
+            <a href="{{ path('app_online_choice') }}" class="btn btn-light mb-3">M'inscrire aux cours en ligne</a>
+            <p>Soucrire à une offre en ligne, pouvoir accéder aux ressources (Vidéo, recettes, etc.) du programme choisi.</p>
+        </div>
+    </div>
     {% if app.user.attendeds.snapshot %}
-        <h3 class="text-center text-primary display-4 my-5">Programme</h3>
+        <h3 class="text-center text-primary display-4 my-5">Vos programmes</h3>
 
         <section class="w-100 my-5">
             {% for attended in app.user.attendeds %}
@@ -144,8 +153,18 @@
                 Bienvenue dans votre espace membre.
             </h1>
             <h2 class="text-primary text-center">
-                Vous n'avez pour l'instant accès à aucun programme.
+                Vous n'avez accès à aucun programme actuellement.
             </h2>
+            <div class="w-50 mx-auto row mt-5 text-primary">
+                <div class="col-6">
+                    <a href="{{ path('app_contact') }}" class="btn btn-light mb-3">Suivre les cours en présentiel</a>
+                    <p>Prendre contact avec le coach pour des cours en groupe ou du suivi individuel.</p>
+                </div>
+                <div class="col-6">
+                    <a href="{{ path('app_online_choice') }}" class="btn btn-light mb-3">M'inscrire aux cours en ligne</a>
+                    <p>Soucrire à une offre en ligne, pouvoir accéder aux ressources (Vidéo, recettes, etc.) du programme choisi.</p>
+                </div>
+            </div>
         </section>
     {% endif %}
 {% endblock %}

@@ -42,6 +42,16 @@
                     <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
                     {% endif %}
                 </div>
+                {%  if app.user %}
+                    <div class="mt-4">
+                        <a href="{{ path('app_member') }}" class="btn btn-light">Je souscris !</a>
+                    </div>
+                {% else %}
+                    <div class="row mt-4">
+                        <a href="{{ path('app_login') }}" class="btn btn-light mr-4 ">Je me connecte</a>
+                        <a href="{{ path('app_register') }}" class="btn btn-light">Je crée mon compte</a>
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
