@@ -44,6 +44,11 @@ class Program
      */
     private $programSteps;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $online;
+
     public function __construct()
     {
         $this->programSteps = new ArrayCollection();
@@ -135,6 +140,18 @@ class Program
                 $programStep->setProgram(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getOnline(): ?bool
+    {
+        return $this->online;
+    }
+
+    public function setOnline(?bool $online): self
+    {
+        $this->online = $online;
 
         return $this;
     }
