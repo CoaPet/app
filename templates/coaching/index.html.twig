@@ -29,15 +29,6 @@
                 </div>
                 <div class="nav-font small-font-size">
                     <p class="mb-1">{{ activity.description|raw }}</p>
-                    {% if activity.intensity is defined %}
-                    <p class="my-0 nav-font-semi-bold mb-1">Intensité :
-                    {% for i in 1..activity.intensity %}
-                        <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>
-                    {% endfor %}</p>
-                    {% endif %}
-                    {% if activity.more %}
-                        <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.more ?? '' }}</p>
-                    {% endif %}
                     {% if activity.coachsentence %}
                     <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
                     {% endif %}

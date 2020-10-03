@@ -1,0 +1,30 @@
+.detail_program {
+    height: 400px;
+    overflow: auto;
+    .prog{
+        opacity: 0;
+    }
+    .opa1{
+        opacity: 1;
+        transition: 3s;
+    }
+    .disparition{
+        height: 0;
+        overflow: hidden;
+    }
+    .apparition{
+        //opacity: 1;
+    }
+    .title{
+        font-family: $main-font-semi-bold;
+        font-size: $large-font-size;
+    }
+    .undertitle{
+        font-family: $italic-font;
+        font-size: $font-size-24;
+    }
+    .text{
+        font-family: $main-font-semi-bold;
+        font-size: $small-font-size;
+    }
+}
