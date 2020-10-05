@@ -24,7 +24,7 @@ class TransformationController extends AbstractController
 
         return $this->render('transformations/index.html.twig', [
             'coachInfo' => $coachInfo,
-            'transformations' => $transformRepository->findAll(),
+            'transformations' => $transformRepository->findBy(['focus'=>false]),
             'transformation' => $transformRepository->findOneBy(['focus'=> true]),
             'title' => 'Transformations',
             'underTitle' => 'Si avant est aujourd\'hui, faites que demain soit après',
