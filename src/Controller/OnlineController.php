@@ -92,9 +92,5 @@ class OnlineController extends AbstractController
         dans votre espace Membre (accessible par votre profil) !');
 
         return $this->redirectToRoute('app_member');
-
-//        $this->addFlash('danger', 'Une erreur s\'est poduite, merci de réessayer ultérieurement ou de nous envoyer un
-//          message via la page contact. Merci de votre compréhension.');
-//        return $this->redirectToRoute('app_member');
     }
 }
