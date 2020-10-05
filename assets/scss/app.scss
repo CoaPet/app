@@ -27,6 +27,12 @@
     }
 }
 
+@for $i from 1 through 5 {
+    .line-h-#{$i} {
+        line-height: 1+(0.2*$i);
+    }
+}
+
 body {
     width: 100vw;
     overflow-x: hidden;
@@ -125,6 +131,12 @@ section {
 .caption-font{
     font-family: $caption-font;
 }
+.caption-font-italic{
+    font-family: $caption-font;
+    font-weight: 700;
+    font-style: italic;
+}
+
 .btn{
     border-radius: 10px;
     padding: 10px 30px 10px 30px;
