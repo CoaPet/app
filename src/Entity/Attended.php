@@ -79,7 +79,7 @@ class Attended
         return $this->program;
     }
 
-    public function setProgram(?Program $program): self
+    public function setProgram($program): self
     {
         $this->program = $program;
 
@@ -91,7 +91,7 @@ class Attended
         return $this->user;
     }
 
-    public function setUser(?User $user): self
+    public function setUser($user): self
     {
         $this->user = $user;
 
