@@ -31,7 +31,7 @@
         <div class="detail_program col-6">
             {% for program in programs %}
             <div id="{{ program.id }}" class="prog disparition">
-                <span class="title">{{ program.name }}</span><br>
+                <span class="title">{{ program.name }}</span><br/><span class="undertitle">{{ program.price ?? '?' }} €</span><br>
                 {% for step in program.programSteps %}
                 <span class="undertitle">{{ loop.index }}. {{ step.title }}</span><br>
                     <span class="text">{{ step.description|raw }}</span>

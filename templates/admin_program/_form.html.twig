@@ -17,6 +17,12 @@
             {{ form_widget(form.duration) }}</td>
     </tr>
     <tr>
+        <th>Prix du programme ?</th>
+        <td class="text-left">
+            {{ form_errors(form.price) }}
+            {{ form_widget(form.price) }}</td>
+    </tr>
+    <tr>
         <th>Programme en ligne ?</th>
         <td class="text-left">
             {{ form_errors(form.online) }}
