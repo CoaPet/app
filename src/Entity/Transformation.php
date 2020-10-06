@@ -99,7 +99,7 @@ class Transformation
     private $title;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $focus;
 
@@ -211,7 +211,7 @@ class Transformation
         return $this->focus;
     }
 
-    public function setFocus(bool $focus): self
+    public function setFocus(?bool $focus): self
     {
         $this->focus = $focus;
 

@@ -71,7 +71,7 @@ class AdminTransformationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($_POST['transformation']['focus'] == true) {
+            if (isset($_POST['transformation']['focus']) && ($_POST['transformation']['focus'] == true)) {
                 $transfocus = $transfRepository->findOneBy(['focus' => true]);
                 if (isset($transfocus)) {
                     $transfocus->setFocus(false);
