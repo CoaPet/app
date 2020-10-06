@@ -1,4 +1,17 @@
 #contact {
+    font-family: Montserrat;
+    font-size: $small-font-size;
+    span {
+        font-family: "Montserrat Bold"
+    }
+    small{
+        font-family: Montserrat;
+        font-size: $xtra-small-font-size;
+    }
+    input, textarea, select {
+        border-radius: 10px;
+        border-style: solid;
+    }
     .first_image {
         object-fit: contain;
         transform: rotate(12deg);
