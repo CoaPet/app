@@ -19,6 +19,7 @@ class ProgramType extends AbstractType
             ->add('name', TextType::class)
             ->add('duration', NumberType::class)
             ->add('online', CheckboxType::class)
+            ->add('price', TextType::class)
         ;
     }
 

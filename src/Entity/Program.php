@@ -49,6 +49,11 @@ class Program
      */
     private $online;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $price;
+
     public function __construct()
     {
         $this->programSteps = new ArrayCollection();
@@ -152,6 +157,18 @@ class Program
     public function setOnline(?bool $online): self
     {
         $this->online = $online;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

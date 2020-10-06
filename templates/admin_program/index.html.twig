@@ -17,6 +17,7 @@
         <tbody>
             <tr>
                 <td class="text-left align-middle medium-font-size main-font-black">{{ program.name|upper }}</td>
+                <td class="text-left align-middle main-font-bold">{{ program.price }} €</td>
                 <td class="align-middle text-primary">{% if program.online == true %}{% include('pictograms/online.html.twig') %}{% endif %}</td>
                 <td class="align-middle">{{ program.duration }} jours</td>
                 <td class="align-middle">
