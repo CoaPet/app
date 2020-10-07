@@ -3,21 +3,11 @@ liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
     filter_sets: # Contient la liste des filtres
-        carre:
-            filters:
-                upscale:
-                    min: [365,365]
         sizeOne: # Nom du filtre
             quality: 100 # Qualité de l'image
             filters: # Liste des filtres à appliquer
                 upscale:
-                    min: [300,100]
+                    min: [500,500]
                 thumbnail:
-                    size: [300,100]
+                    size: [500,500]
                     mode: outbound
-
-        heighten100: # Nom du filtre
-            quality: 100 # Qualité de l'image
-            filters: # Liste des filtres à appliquer
-                relative_resize:
-                    heighten: 100
