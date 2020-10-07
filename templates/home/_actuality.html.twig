@@ -37,12 +37,3 @@
             TOUTE L'ACTU</a>
     </div>
 </section>
-{% for actuality in actualities %}
-    {% if loop.index is odd %}
-    <img src="{{ vich_uploader_asset(actuality, 'actualityFile')|imagine_filter('sizeOne') }}"
-         alt="{{ actuality.title }}">
-    {% else %}
-        <img src="{{ vich_uploader_asset(actuality, 'actualityFile')|imagine_filter('heighten100') }}"
-             alt="{{ actuality.title }}">
-    {% endif %}
-{% endfor %}
