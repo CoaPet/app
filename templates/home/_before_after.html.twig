@@ -17,7 +17,7 @@
                         <div class="col-6 position-relative mb-5 mt-1 pt-lg-5">
                             <div class="picture_duo first_image position-relative bg-light col-lg-12">
                                 <div class="overflow-hidden polaroid_img w-100 m-auto">
-                                    <img class="w-100 my-auto" src="{{ vich_uploader_asset(transformation, 'pictureBeforeFile') }}" alt="{{ transformation.name }} avant">
+                                    <img class="w-100 my-auto" src="{{ vich_uploader_asset(transformation, 'pictureBeforeFile')|imagine_filter('sizeOne') }}" alt="{{ transformation.name }} avant">
                                 </div>
                                 <div class="polaroid_label text-center text-primary small-14-font-size">
                                     <div class="pt-3">{{ transformation.name|upper }}</div>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="picture_duo second_image position-absolute bg-light col-lg-11">
                                 <div class="overflow-hidden polaroid_img w-100">
-                                    <img class="w-100 my-auto" src="{{ vich_uploader_asset(transformation, 'pictureAfterFile') }}" alt="{{ transformation.name }} après">
+                                    <img class="w-100 my-auto" src="{{ vich_uploader_asset(transformation, 'pictureAfterFile')|imagine_filter('sizeOne') }}" alt="{{ transformation.name }} après">
                                 </div>
                                 <div class="polaroid_label text-center text-secondary medium-20-font-size">
                                     <div class="pt-2">-{{ transformation.pound }} Kg</div>
