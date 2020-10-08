@@ -9,7 +9,7 @@
                     <div class="w-100 "id="article_{{ actuality.id }}">
                         <div class="float-left mr-4 mb-4">
                             <div>{% if actuality.picture %}
-                                <img class="blog-img " src="{{ vich_uploader_asset(actuality, 'actualityFile') }}"
+                                <img class="blog-img " src="{{ vich_uploader_asset(actuality, 'actualityFile')|imagine_filter('actuality') }}"
                                      alt="{{ actuality.title }}">
                                 {%  else %}
                                     <img class="blog-img" src="{{ asset('build/coach_image_about_me_home.jpg')}}" alt="image coach">

@@ -127,7 +127,11 @@
 
                                                         <a href="/uploads/ressources/{{ ressource.file }}" target="_blank" class="text-decoration-none container-fluid h-100 d-flex flex-column justify-content-center">
                                                             <div class="row flex-column justify-content-center align-items-center">
+                                                                {% if ressource.type == 'image' %}
+                                                                    <img src="{{ asset('uploads/ressources/'~ressource.file)|imagine_filter('img_ressource') }}" alt="{{ ressource.type }}" class="fileImg">
+                                                                {% else %}
                                                                 <img src="{{ asset('build/'~ressource.type~'.svg')}}" alt="{{ ressource.type }}" class="fileImg">
+                                                                {% endif %}
                                                                 <p class="">{{ ressource.name }}</p>
                                                             </div>
                                                         </a>
