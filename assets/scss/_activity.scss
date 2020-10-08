@@ -13,7 +13,7 @@ $circle: #ffffff;
     order: 1;
 }
 .card-text-activity{
-    height: 165px;
+    height: 130px;
     width: 80%;
     color: $darkgray;
     font-family: $main-font;
@@ -24,7 +24,7 @@ $circle: #ffffff;
     top: -165px;
     background-color: $circle;
     border-radius: 16px;
-    border: solid 5px $circle;
+    border: solid 1px $circle;
 }
 
 .vib{
@@ -42,7 +42,9 @@ $circle: #ffffff;
 }
 
 .card-img-top-activity {
-    width: 371px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top:2%;
     height: 280px;
     object-fit: cover;
 }
