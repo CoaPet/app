@@ -14,28 +14,31 @@
     <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
     </section>
 </div>
-    <section id="coaching">
+    <section id="team_page_list">
         {% for activity in activities %}
-        <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">
-            <div class="overflow-hidden card-act-image mx-auto">
-                <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"
-                     alt="{{ activity.title }}">
-            </div>
-            <div class="col-md-8 d-flex flex-column text-light">
-                <div class="w-100 text-left">
-                        <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
+            <div class="card-coach-activity d-flex justify-content-between w-100 my-5 py-5">
+                <div class="overflow-hidden card-act-image mx-0 text-left">
+                    <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"
+                         alt="{{ activity.title }}">
                 </div>
-                <div class="nav-font small-font-size">
-                    <p class="mb-1">{{ activity.description|raw }}</p>
-                    {% if activity.coachsentence %}
-                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
-                    {% endif %}
+                <div class="details d-flex flex-column text-light">
+                    <div class="{% if loop.index is odd %}pl-5{% else %}pr-5{% endif %}">
+                        <div class="w-100 text-left">
+                            <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
+                        </div>
+                        <div class="nav-font small-font-size">
+                            <p class="mb-1">{{ activity.description|raw }}</p>
+                            {% if activity.more %}
+                                <p class="my-0 mb-1 nav-font-semi-bold">Le mot du coach : <span class="flashy">{{ activity.more ?? '' }}</span></p>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
     </section>
-<div class="row text-light bg-primary py-4 h-100">
+
+    <div class="row text-light bg-primary py-4 h-100">
     <div id="biodyxpert" class="col-4 text-right">
         <div class="position-absolute w-100 text-right px-5">
             <img class="mt-4" src="{{ asset('build/biodyxpert.png') }}" alt="biodyXpert"/>
