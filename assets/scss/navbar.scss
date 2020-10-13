@@ -94,6 +94,10 @@ header .dropdown-toggle::after {
 }
 
 header {
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
     .sociaux{
         margin-right: 15px;
     }
