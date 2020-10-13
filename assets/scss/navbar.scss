@@ -110,7 +110,6 @@ header {
         height: 2px;
         background: $navbarUnderlineHover;
     }
-
     .navbar-link::after {
         content: '';
         display: block;
@@ -168,9 +167,28 @@ header {
 }
 @media screen and (max-width: 500px) {
 
-    .navbar-collapse {
-        top:50px;
-        background-color: $primary-transparent;
+    header {
+        .navbar-collapse {
+            top:50px;
+            background-color: rgba($primary, 0.7);
+        }
+        .navbar-link::after {
+            display: none;
+        }
+        .navbar-link:hover::after {
+            display: none;
+        }
+        .navbar-focus::after {
+            display:none;
+        }
+        .btn{
+            padding-right: 0;
+        }
+        .navbar{
+            position: absolute;
+            width: 200px;
+            left: 150px;
+        }
     }
 }
 #road a:hover{
