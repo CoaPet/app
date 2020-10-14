@@ -1,5 +1,5 @@
-<div class="timeline mx-auto mb-3 d-flex bg-white">
-    <div class="blocs mx-auto row">
+<div class="timeline mb-3 d-flex justify-content-center bg-white">
+    <div class="blocs row">
         {% for etape in etapes %}
         <div class="bloc">
             <div class="etape row m-0">
@@ -8,13 +8,12 @@
                 <div class="arrow-corpus d-flex bg-blue-{{ loop.index }}">
                     <div class="num-etape m-auto">{{ etape.etape|upper }}</div>
                 </div>
-                <div class="arrow-point bl-{{ loop.index }}">
-                </div>
+                <div class="arrow-point bl-{{ loop.index }}"></div>
             </div>
             <div class="double-booble position-relative px-0">
                 <div class="round border-blue-{{ loop.index }}"></div>
                 <div class="link border-blue-{{ loop.index }}"></div>
-                <div class="picto d-flex color-blue-{{ loop.index }} border-blue-{{ loop.index }}">
+                <div class="picto d-flex color-blue-{{ loop.index }}">
                     <div class="m-auto">
                         {% include('pictograms/' ~  (etape.picto)) %}
                     </div>
