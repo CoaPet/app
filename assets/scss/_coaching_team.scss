@@ -45,17 +45,61 @@
     left: calc( 50% - 185px);
     margin: 0 auto;
 }
-
 #biodyxpert img{
     width: 280px;
     transform: rotate(-20deg);
 }
-#team_page_list{
+#list_activities{
     width: 980px;
     .details{
-        width: 460px;
+        width: 50%;
     }
+}
 section > #coaching{
     width: 980px;
 }
+@media screen and (max-width: 1000px) {
+
+    #list_activities {
+        width: 100%;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        .details{
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    .card-coach-activity{
+        flex-direction: column;
+    }
+    .card-coach-activity:nth-of-type(even){
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .card-act-image{
+        margin-right: auto;
+        margin-left: auto;
+        width: 250px;
+        height: 250px;
+    }
+    #biodyxpert{
+        top: -15px;
+        width: 40%;
+        margin-left: 5%;
+        img{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    #biodyxpert{
+        position: absolute;
+        top: -15px;
+        width: 40%;
+        margin-left: 5%;
+        img{
+            width: 100%;
+        }
+    }
 }
