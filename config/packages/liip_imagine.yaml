@@ -4,10 +4,24 @@ liip_imagine:
     driver: "gd"
     filter_sets: # Contient la liste des filtres
         sizeOne: # Nom du filtre
-            quality: 100 # Qualité de l'image
+            quality: 95 # Qualité de l'image
             filters: # Liste des filtres à appliquer
                 upscale:
                     min: [500,500]
                 thumbnail:
                     size: [500,500]
+                    mode: outbound
+        actuality: # Nom du filtre
+            quality: 100 # Qualité de l'image
+            filters: # Liste des filtres à appliquer
+                upscale:
+                    min: [ 320,220 ]
+                thumbnail:
+                    size: [ 320,220 ]
+                    mode: outbound
+        img_ressource:
+            quality: 95
+            filters:
+                thumbnail:
+                    size: [100,100]
                     mode: outbound

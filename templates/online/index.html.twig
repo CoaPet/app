@@ -14,31 +14,30 @@
     <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
     </section>
 </div>
-    <section id="coaching">
-        {% for activity in activities %}
-        <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">
-            <div class="overflow-hidden card-act-image mx-auto">
+<section id="list_activities">
+    {% for activity in activities %}
+        <div class="card-coach-activity d-flex justify-content-between w-100 my-5 py-5">
+            <div class="overflow-hidden card-act-image mx-0 text-left">
                 <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"
                      alt="{{ activity.title }}">
             </div>
-            <div class="col-md-8 d-flex flex-column text-light">
-                <div class="w-100 text-left">
+            <div class="details d-flex flex-column text-light">
+                <div class="{% if loop.index is odd %}pl-5{% else %}pr-5{% endif %}">
+                    <div class="w-100 text-left">
                         <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
-                </div>
-                <div class="nav-font small-font-size">
-                    <p class="mb-1">{{ activity.description|raw }}</p>
-                    {% if activity.intensity is defined %}
-                    <p class="my-0 nav-font-semi-bold mb-1">Intensité :
-                    {% for i in 1..activity.intensity %}
-                        <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>
-                    {% endfor %}</p>
-                    {% endif %}
-                    {% if activity.more %}
-                        <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.more ?? '' }}</p>
-                    {% endif %}
-                    {% if activity.coachsentence %}
-                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
-                    {% endif %}
+                    </div>
+                    <div class="nav-font small-font-size">
+                        <p class="mb-1">{{ activity.description|raw }}</p>
+                        {% if activity.intensity is defined %}
+                            <p class="my-0 nav-font-semi-bold mb-1">Intensité :
+                                {% for i in 1..activity.intensity %}
+                                    <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>
+                                {% endfor %}</p>
+                        {% endif %}
+                        {% if activity.more %}
+                            <p class="my-0 mb-1 nav-font-semi-bold">Type d'effort : <span class="flashy">{{ activity.more ?? '' }}</span></p>
+                        {% endif %}
+                    </div>
                 </div>
                 {%  if app.user %}
                     <div class="mt-4">
@@ -52,8 +51,48 @@
                 {% endif %}
             </div>
         </div>
-        {% endfor %}
-    </section>
+    {% endfor %}
+</section>
+{#    <section id="coaching">#}
+{#        {% for activity in activities %}#}
+{#        <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">#}
+{#            <div class="overflow-hidden card-act-image mx-auto">#}
+{#                <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"#}
+{#                     alt="{{ activity.title }}">#}
+{#            </div>#}
+{#            <div class="col-md-8 d-flex flex-column text-light">#}
+{#                <div class="w-100 text-left">#}
+{#                        <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>#}
+{#                </div>#}
+{#                <div class="nav-font small-font-size">#}
+{#                    <p class="mb-1">{{ activity.description|raw }}</p>#}
+{#                    {% if activity.intensity is defined %}#}
+{#                    <p class="my-0 nav-font-semi-bold mb-1">Intensité :#}
+{#                    {% for i in 1..activity.intensity %}#}
+{#                        <img class="mx-1 pb-2" src="{{ asset('build/fire.svg') }}" alt="fire"/>#}
+{#                    {% endfor %}</p>#}
+{#                    {% endif %}#}
+{#                    {% if activity.more %}#}
+{#                        <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le + : </span>{{ activity.more ?? '' }}</p>#}
+{#                    {% endif %}#}
+{#                    {% if activity.coachsentence %}#}
+{#                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#                {%  if app.user %}#}
+{#                    <div class="mt-4">#}
+{#                        <a href="{{ path('app_member') }}" class="btn btn-light">Je souscris !</a>#}
+{#                    </div>#}
+{#                {% else %}#}
+{#                    <div class="row mt-4">#}
+{#                        <a href="{{ path('app_login') }}" class="btn btn-light mr-4 ">Je me connecte</a>#}
+{#                        <a href="{{ path('app_register') }}" class="btn btn-light">Je crée mon compte</a>#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </section>#}
 <div class="row text-light bg-primary py-4 h-100">
 
 </div>

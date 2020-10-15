@@ -1,17 +1,17 @@
 
 <section class="about-me-home pt-2 pb-4">
-    <div class="container-fluid">
+    <div class="">
         <h2 class="text-center mb-5 text-primary"><span class="main-font-light">
                 À PROPOS</span> <span class="main-font-bold">DE MOI</span>
         </h2>
-        <div class="row">
-            <div class="align-items-start col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
+        <div class="row w-100 mx-0">
+            <div class="col-md-6 mx-0">
                 {% if coachInfo %}
-                <img class=" img-coach-about-me-home" src="{{ vich_uploader_asset(coachInfo, 'imageFile') }}"
+                <img class="w-100" src="{{ vich_uploader_asset(coachInfo, 'imageFile') }}"
                      alt="Coach Peter">
                 {% endif %}
             </div>
-            <div class="col-lg-6 c">
+            <div class="col-md-6 mx-0">
                 <h3 class="coach-name-about-me font-weight-bold">
                     <span class="text-primary main-font-black semi-large-font-size">PETER DIONISIO</span>
                 </h3>
@@ -19,7 +19,7 @@
                     "{{ (coachInfo.catchline ?? '')|raw }}"
                 </p>
                 <div>
-                    <ul class="nav mt-3" id="myTab" role="tablist">
+                    <ul class="nav mt-3 flex-column flex-md-row" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active text-primary" id="home-tab" data-toggle="tab"
                                href="#home" role="tab" aria-controls="home" aria-selected="true">
@@ -46,7 +46,7 @@
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         {{ (coachInfo.quality ?? '')|raw }}
                     </div>
-                    <div class="text-left">
+                    <div class="text-md-left text-center">
                         <a href="{{ path('app_contact') }}"
                            class="contact btn nav-font-semi-bold small-14-font-size btn border-primary">
                             ME CONTACTER

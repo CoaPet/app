@@ -14,38 +14,41 @@
     <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
     </section>
 </div>
-    <section id="coaching">
+    <section id="list_activities">
         {% for activity in activities %}
-        <div class="card-coach-activity d-flex flex-wrap w-100 my-5 py-3">
-            <div class="overflow-hidden card-act-image mx-auto">
-                <div class="align_center">
-                <img class="image-activity" src="{{ vich_uploader_asset(activity, 'activityFile') }}"
-                     alt="{{ activity.title }}">
+            <div class="card-coach-activity d-flex justify-content-between w-100 my-1 my-md-5 py-2 py-md-5">
+                <div class="w-md-50 d-flex justify-content-around">
+                    <div class="overflow-hidden card-act-image mx-0 text-left mx-auto mx-md-0">
+                        <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"
+                             alt="{{ activity.title }}">
+                    </div>
+                </div>
+                <div class="details d-flex flex-column text-light {% if loop.index is odd %}pl-md-5{% else %}pr-md-5{% endif %}">
+                    <div class="">
+                        <div class="w-100 text-left">
+                            <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
+                        </div>
+                        <div class="nav-font small-font-size">
+                            <p class="mb-1">{{ activity.description|raw }}</p>
+                            {% if activity.more %}
+                                <p class="my-0 mb-1 nav-font-semi-bold">Le mot du coach : <span class="flashy">{{ activity.more ?? '' }}</span></p>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8 d-flex flex-column text-light">
-                <div class="w-100 text-left">
-                        <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
-                </div>
-                <div class="nav-font small-font-size">
-                    <p class="mb-1">{{ activity.description|raw }}</p>
-                    {% if activity.coachsentence %}
-                    <p class="my-0 mb-1"><span class="nav-font-semi-bold">Le mot du coach : </span>{{ activity.coachsentence ?? '' }}</p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
         {% endfor %}
     </section>
-<div class="row text-light bg-primary py-4 h-100">
-    <div id="biodyxpert" class="col-4 text-right">
-        <div class="position-absolute w-100 text-right px-5">
-            <img class="mt-4" src="{{ asset('build/biodyxpert.png') }}" alt="biodyXpert"/>
+
+    <div class="row text-light bg-primary pt-4 h-100 position-relative">
+    <div id="biodyxpert" class="col-md-4 text-right">
+        <div class="w-100 text-right px-md-5">
+            <img class="mt-md-4" src="{{ asset('build/biodyxpert.png') }}" alt="biodyXpert"/>
         </div>
     </div>
-    <div class="col-5 text-left small-14-font-size nav-font">
-        <p class="nav-font-bold">BIODY EXPERT</p>
-        <p>Rum, nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus
+    <div class="col-md-5 text-left small-14-font-size nav-font">
+        <p class="nav-font-bold text-center text-md-left">BIODY EXPERT</p>
+        <p class="px-1">Rum, nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus
         parium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat rum.</p>
     </div>
 </div>
