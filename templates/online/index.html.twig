@@ -16,13 +16,15 @@
 </div>
 <section id="list_activities">
     {% for activity in activities %}
-        <div class="card-coach-activity d-flex justify-content-between w-100 my-5 py-5">
-            <div class="overflow-hidden card-act-image mx-0 text-left">
-                <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"
-                     alt="{{ activity.title }}">
+        <div class="card-coach-activity d-flex justify-content-between w-100 my-1 my-md-5 py-2 py-md-5">
+            <div class="w-md-50 d-flex justify-content-around">
+                <div class="overflow-hidden card-act-image mx-0 text-left mx-auto mx-md-0">
+                    <img class="w-100" src="{{ vich_uploader_asset(activity, 'activityFile')|imagine_filter('sizeOne') }}"
+                         alt="{{ activity.title }}">
+                </div>
             </div>
-            <div class="details d-flex flex-column text-light">
-                <div class="{% if loop.index is odd %}pl-5{% else %}pr-5{% endif %}">
+            <div class="details d-flex flex-column text-light {% if loop.index is odd %}pl-md-5{% else %}pr-md-5{% endif %}">
+                <div>
                     <div class="w-100 text-left">
                         <h2 class="mb-0 w-100 medium-font-size main-font-black"><span class="main-font-semi-bold xl-font-size">{{ loop.index }}.</span> {{ activity.title|upper }}</h2>
                     </div>
