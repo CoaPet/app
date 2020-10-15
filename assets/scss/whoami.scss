@@ -3,6 +3,14 @@
         font-size: $small-font-size;
         font-family: $main-font-semi-bold;
     }
+    .card-wia-image{
+        border-radius: 50%;
+        border: white 8px solid;
+        width: 340px;
+        height: 340px;
+    }
+    .card-wia-text{
+    }
     .number {
         font-size: $xlarge-font-size;
     }
@@ -47,6 +55,8 @@
 }
 .bloc_wia{
     margin-bottom: 120px;
+    display: flex;
+    justify-content: center;
 }
 .bloc_wia:nth-of-type(even)  {
     flex-direction: row-reverse;

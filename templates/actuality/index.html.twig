@@ -5,21 +5,22 @@
 {% block body %}
     <section>
             {% for actuality in actualities %}
-                <div class="row flex-md-row">
-                    <div class="w-100 "id="article_{{ actuality.id }}">
-                        <div class="float-left mr-4 mb-4">
-                            <div>{% if actuality.picture %}
+                <div class="row flex-md-row mx-0">
+                    <div class="w-100" id="article_{{ actuality.id }}">
+                        <div class="float-md-left mr-4 mb-4">
+                            <div>
+                                {% if actuality.picture %}
                                 <img class="blog-img " src="{{ vich_uploader_asset(actuality, 'actualityFile')|imagine_filter('actuality') }}"
                                      alt="{{ actuality.title }}">
                                 {%  else %}
-                                    <img class="blog-img" src="{{ asset('build/coach_image_about_me_home.jpg')}}" alt="image coach">
-                                    {% endif %}
+                                <img class="blog-img" src="{{ asset('build/coach_image_about_me_home.jpg')}}" alt="image coach">
+                                {% endif %}
                             </div>
                             <div class="badge-blog text-center pb-2 w-100">
                                 {{ actuality.topic }}
                             </div>
                         </div>
-                        <div class="">
+                        <div class="mx-0 px-1">
                             <h2 class="text-primary text-left">{{ actuality.title }}</h2>
                             <div class="text-left">
                                 <div class="date-blog">

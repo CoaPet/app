@@ -5,9 +5,9 @@
 {% block body %}
     <section class="mb-5">
         {% for transformation in transformations %}
-            <div class="container-fluid">
-                <div class="row transformations mb-5">
-                    <div class="col-md-6 text-primary mt-3 {% if loop.index is odd %} pl-0 pr-5{% else %}pr-0 pl-5{% endif %}">
+            <div class="container">
+                <div class="row transformations mb-2 mb-md-5">
+                    <div class="col-md-6 text-primary mt-3 pr-0 px-2 pl-md-5">
                         <h3 class="main-font-black semi-large-font-size mb-0">
                             {{ transformation.name }}
                         </h3>
@@ -18,19 +18,24 @@
                             {{ transformation.description|raw }}
                         </div>
                         <div class="row mx-0">
-                            <a class="btn btn-outline-primary nav-font-semi-bold xxs-font-size" href="{{ path('app_contact') }}">JE SUIS INTÉRESSÉ(E)</a>
+                            <a class="mx-auto btn btn-outline-primary nav-font-semi-bold xxs-font-size" href="{{ path('app_contact') }}">JE SUIS INTÉRESSÉ(E)</a>
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex">
-                        <img class="mr-2 w-100" src="{{ vich_uploader_asset(transformation, 'pictureBeforeFile') }}" alt="Photo avant le programme ">
-                        <img class="w-100" src="{{ vich_uploader_asset(transformation, 'pictureAfterFile') }}" alt="Photo après le programme ">
+                    <div class="col-md-6 d-flex flex-wrap justify-content-center">
+                        <div>
+                            <img class="my-2 mx-1" src="{{ vich_uploader_asset(transformation, 'pictureBeforeFile')|imagine_filter('carre_200') }}" alt="Photo avant le programme ">
+                        </div>
+                        <div>
+                            <img class="my-2 mx-1" src="{{ vich_uploader_asset(transformation, 'pictureAfterFile')|imagine_filter('carre_200') }}" alt="Photo après le programme ">
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
         {% endfor %}
     </section>
     {% if transformation %}
-    <div class="container-fluid bg-primary w-100">
+    <div class="container-fluid bg-primary w-100 px-0 px-md-3">
         <section id="focus" class="row transformations mx-auto py-5">
             <div class="mb-5 w-100 text-center text-light medium-font-size main-font-bold"><span class="main-font text-light">FOCUS</span> TRANSFORMATION</div>
             <div class="col-md-6 d-flex">
