@@ -78,6 +78,7 @@
             </div>
         </div>
     </div>
+
     <div class="accompagne col-4 d-flex flex-row offset-md-4 mb-5">
         <h3 class="mr-md-4 font-italic semi-large-font-size">
             Je vous accompagne pour
@@ -86,13 +87,16 @@
     </div>
 
     <div class="bg-radiant py-5 text-light ">
-        <div class="bloc_wia row col-10 offset-1">
-            <div class="overflow-hidden card-act-image mx-auto">
-                <img class="w-100" src="{{ asset('build/whoiam/lost_pound.jpg')|imagine_filter('sizeOne') }}"
-                     alt="Perte de poids">
+
+        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
+            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
+                <div class="overflow-hidden card-wia-image m-auto">
+                    <img class="w-100" src="{{ asset('build/whoiam/lost_pound.jpg')|imagine_filter('sizeOne') }}"
+                         alt="Perte de poids">
+                </div>
             </div>
-            <div class="col-md-7 offset-1">
-                <div class="col-8">
+            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
+                <div>
                     <h2 ><span class="number">1</span>.PERTE DE POIDS</h2>
                     <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
                     <ul class="font-weight-bold">
@@ -108,13 +112,15 @@
             </div>
         </div>
 
-        <div class="bloc_wia row col-10 offset-1">
-            <div class="overflow-hidden card-act-image mx-auto">
-                <img class="w-100" src="{{ asset('build/whoiam/posture_dos.jpg')|imagine_filter('sizeOne') }}"
-                     alt="Postures et dos">
+        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
+            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
+                <div class="overflow-hidden card-wia-image m-auto">
+                    <img class="w-100" src="{{ asset('build/whoiam/posture_dos.jpg')|imagine_filter('sizeOne') }}"
+                         alt="Postures et dos">
+                </div>
             </div>
-            <div class="col-md-7 offset-1">
-                <div class="col-8">
+            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
+                <div>
                     <h2 ><span class="number">2</span>.POSTURE ET DOS</h2>
                     <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
                     <ul class="font-weight-bold">
@@ -130,13 +136,15 @@
             </div>
         </div>
 
-        <div class="bloc_wia row col-10 offset-1">
-            <div class="overflow-hidden card-act-image mx-auto">
-                <img class="w-100" src="{{ asset('build/whoiam/remise_forme.jpg')|imagine_filter('sizeOne') }}"
-                     alt="Remise en forme">
+        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
+            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
+                <div class="overflow-hidden card-wia-image m-auto">
+                    <img class="w-100" src="{{ asset('build/whoiam/remise_forme.jpg')|imagine_filter('sizeOne') }}"
+                         alt="Remise en forme">
+                </div>
             </div>
-            <div class="col-md-7 offset-1">
-                <div class="col-8">
+            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
+                <div>
                     <h2 ><span class="number">3</span>.REMISE EN FORME</h2>
                     <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
                     <ul class="font-weight-bold">
@@ -152,13 +160,15 @@
             </div>
         </div>
 
-        <div class="bloc_wia row col-10 offset-1">
-            <div class="overflow-hidden card-act-image mx-auto">
-                <img class="w-100" src="{{ asset('build/whoiam/masse_musculaire.jpg')|imagine_filter('sizeOne') }}"
-                     alt="Masse musculaire">
+        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
+            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
+                <div class="overflow-hidden card-wia-image m-auto">
+                    <img class="w-100" src="{{ asset('build/whoiam/masse_musculaire.jpg')|imagine_filter('sizeOne') }}"
+                         alt="Masse musculaire">
+                </div>
             </div>
-            <div class="col-md-7 offset-1">
-                <div class="col-8">
+            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
+                <div>
                     <h2 ><span class="number">4</span>.PRISE DE MASSE MUSCULAIRE</h2>
                     <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
                     <ul class="font-weight-bold">
@@ -173,10 +183,8 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-    </section>
+</div>
 
     <div class="row justify-content-center mt-5 mb-5 pb-0 w-100 meet">
         <h4 class="text-center pt-3 pb-4">
@@ -191,5 +199,5 @@
     </div>
 
     {% include 'map.html.twig' %}
-</div>
+</section>
 {% endblock %}
