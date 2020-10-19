@@ -20,7 +20,7 @@
                 {% endfor %}
                 >
                 <img class="card-img-top card-img-top-activity"
-                     src="{{ (asset('uploads/activites/') ~ activity.picture) }}"
+                     src="{{ (asset('uploads/activites/') ~ activity.picture)|imagine_filter('home_activity') }}"
                      alt="Card image cap">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div class="badge-activity d-flex justify-content-center align-items-center">
@@ -33,12 +33,12 @@
                     <h3 class="card-title text-primary text-center mt-2 medium-font-size main-font-medium">
                         {{ activity.title|upper }}
                     </h3>
-                    <div class="card-text card-text-activity text-center text-break">
+                    <div class="card-text card-text-activity text-center text-break overflow-hidden">
                         {{ activity.description|truncateText|raw }}
                     </div>
                 </div>
                 </a>
-                <div class="col-12 text-center p-3">
+                <div class="col-12 text-center p-2">
                     <a href="{{ path('app_contact') }}"
                             class="btn border-primary text-primary nav-font-semi-bold xxs-font-size">ME CONTACTER</a>
                 </div>

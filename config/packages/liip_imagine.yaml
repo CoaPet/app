@@ -7,9 +7,17 @@ liip_imagine:
             quality: 95 # Qualité de l'image
             filters: # Liste des filtres à appliquer
                 upscale:
-                    min: [500,500]
+                    min: [ 500,500 ]
                 thumbnail:
-                    size: [500,500]
+                    size: [ 500,500 ]
+                    mode: outbound
+        home_activity: # Nom du filtre
+            quality: 95 # Qualité de l'image
+            filters: # Liste des filtres à appliquer
+                upscale:
+                    min: [ 400,300 ]
+                thumbnail:
+                    size: [ 400,300 ]
                     mode: outbound
         actuality: # Nom du filtre
             quality: 100 # Qualité de l'image
@@ -23,5 +31,13 @@ liip_imagine:
             quality: 95
             filters:
                 thumbnail:
-                    size: [100,100]
+                    size: [ 100,100 ]
+                    mode: outbound
+        carre_200:
+            quality: 95
+            filters:
+                upscale:
+                    min: [ 200,200 ]
+                thumbnail:
+                    size: [200,200]
                     mode: outbound

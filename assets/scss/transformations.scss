@@ -1,6 +1,6 @@
 $testimony: #444d4f;
 
-.container-fluid:nth-child(even) {
+.container:nth-child(even) {
     .transformations {
         flex-direction: row-reverse;
     }
