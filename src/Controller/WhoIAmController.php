@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Transformation;
 use App\Entity\Timeline;
+use App\Entity\Offer;
 
 class WhoIAmController extends AbstractController
 {
@@ -29,6 +30,7 @@ class WhoIAmController extends AbstractController
 
         return $this->render('WhoIAm/index.html.twig', [
             'etapes' => Timeline::WHOIAM,
+            'offers' => Offer::OFFER,
             'degrees' => $coachDegrees,
             'coachInfo' => $coachInfo,
             'title' => 'Qui suis-je ?',
