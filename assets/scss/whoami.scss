@@ -56,9 +56,8 @@
 .bloc_wia{
     margin-bottom: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .bloc_wia:nth-of-type(even)  {
     flex-direction: row-reverse;
-    justify-content: flex-end;
 }
