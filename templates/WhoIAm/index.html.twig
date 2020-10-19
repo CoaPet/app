@@ -51,17 +51,17 @@
 
                     <div>
                         <div class="tab-content d-flex mx-md-0" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active px-1" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <p>
                                     {{ (coachInfo.presentation ?? '')|raw }}
                                 </p>
 
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade px-1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 {{ (coachInfo.philosophy ?? '')|raw }}
                             </div>
 
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="tab-pane fade px-1" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 {% for degree in degrees %}
                                     <div>
                                        <span class="text-secondary">{{ degree.startDate ?? '' }} -
@@ -87,102 +87,26 @@
     </div>
 
     <div class="bg-radiant py-5 text-light ">
+        {% for offer in offers %}
 
-        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
+        <div class="bloc_wia row col-md-8 offset-md-1 mx-0 mx-md-auto px-0">
             <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
                 <div class="overflow-hidden card-wia-image m-auto">
-                    <img class="w-100" src="{{ asset('build/whoiam/lost_pound.jpg')|imagine_filter('sizeOne') }}"
+                    <img class="w-100" src="{{ asset('build/whoiam/' ~ offer.picture)|imagine_filter('sizeOne') }}"
                          alt="Perte de poids">
                 </div>
             </div>
-            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
+            <div class="card-wia-text col-lg-5 offset-md-1 offset-lg-0">
                 <div>
-                    <h2 ><span class="number">1</span>.PERTE DE POIDS</h2>
-                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
-                    <ul class="font-weight-bold">
-                        <li>Alimentation</li>
-                        <li>Sommeil</li>
-                        <li>Bien-être mental</li>
-                        <li>Activité physique</li>
-                    </ul>
-                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
-                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
-                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
+                    <h2 ><span class="number">{{ loop.index }}</span>.{{ offer.name }}</h2>
+                    {{ offer.description|raw }}
+                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">{{ offer.more }}</span></p>
+                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">{{ offer.sentence }}</span></span></p>
                 </div>
             </div>
         </div>
 
-        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
-            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
-                <div class="overflow-hidden card-wia-image m-auto">
-                    <img class="w-100" src="{{ asset('build/whoiam/posture_dos.jpg')|imagine_filter('sizeOne') }}"
-                         alt="Postures et dos">
-                </div>
-            </div>
-            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
-                <div>
-                    <h2 ><span class="number">2</span>.POSTURE ET DOS</h2>
-                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
-                    <ul class="font-weight-bold">
-                        <li>Alimentation</li>
-                        <li>Sommeil</li>
-                        <li>Bien-être mental</li>
-                        <li>Activité physique</li>
-                    </ul>
-                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
-                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
-                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
-            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
-                <div class="overflow-hidden card-wia-image m-auto">
-                    <img class="w-100" src="{{ asset('build/whoiam/remise_forme.jpg')|imagine_filter('sizeOne') }}"
-                         alt="Remise en forme">
-                </div>
-            </div>
-            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
-                <div>
-                    <h2 ><span class="number">3</span>.REMISE EN FORME</h2>
-                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
-                    <ul class="font-weight-bold">
-                        <li>Alimentation</li>
-                        <li>Sommeil</li>
-                        <li>Bien-être mental</li>
-                        <li>Activité physique</li>
-                    </ul>
-                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
-                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
-                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="bloc_wia row col-md-10 offset-md-1 mx-0 mx-md-auto px-0">
-            <div class="col-md-5 p-0 mx-auto mx-md-4 col-12">
-                <div class="overflow-hidden card-wia-image m-auto">
-                    <img class="w-100" src="{{ asset('build/whoiam/masse_musculaire.jpg')|imagine_filter('sizeOne') }}"
-                         alt="Masse musculaire">
-                </div>
-            </div>
-            <div class="card-wia-text col-md-5 offset-md-1 offset-lg-0">
-                <div>
-                    <h2 ><span class="number">4</span>.PRISE DE MASSE MUSCULAIRE</h2>
-                    <p>Découvrez un programme naturel et complet où nous travaillons ensemble sur l'équilibre de 4 piliers santés :</p>
-                    <ul class="font-weight-bold">
-                        <li>Alimentation</li>
-                        <li>Sommeil</li>
-                        <li>Bien-être mental</li>
-                        <li>Activité physique</li>
-                    </ul>
-                    <p>Je vous accompagne sur une durée de 3, 6 ou 12 mois afin d'atteindre vos objectifs efficacement.</p>
-                    <p class="mb-0 medium-font-size"><span class="nav-font-bold">Le + : </span><span class="nav-font-bold flashy">8</span></p>
-                    <p><span class="nav-font-bold">Le mot du coach : <span class="flashy">Cardio/Renforcement musculaire</span></span></p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
