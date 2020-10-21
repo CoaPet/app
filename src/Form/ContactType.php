@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use lib\RecaptchaBundle\Type\RecaptchaSubmitType;
 use Libs\RecaptchaBundle;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

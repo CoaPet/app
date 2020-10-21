@@ -27,6 +27,35 @@
     .pola{
         top:725px;
     }
+    button {
+        border-radius: 10px;
+        background-color: $light;
+        border: 2px solid $primary;
+        padding: 10px 30px 10px 30px;
+        font-family: "Montserrat Semi-Bold";
+        font-size: 14px;
+    }
+    #captcha{
+        padding: 4px;
+        width: 250px;
+        background-color: $primary;
+        color: $light;
+        border-radius: 8px;
+        text-align: center;
+        p {
+            border-radius: 8px 8px 0 0;
+            font-family: $main-font-bold;
+            background-color: $light;
+            color: $primary;
+        }
+        input{
+            border-radius: 0 0 8px 8px;
+            margin-top: 12px;
+            text-align: center;
+            background-color: $light;
+            color: $primary;
+        }
+    }
 }
 .blue_bottom{
     height: 50px;
