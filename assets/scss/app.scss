@@ -33,6 +33,11 @@
     }
 }
 
+@for $i from 1 through 5 {
+    .br-#{$i} {
+        border-radius: 2px * $i;
+    }
+}
 body {
     width: 100vw;
     overflow-x: hidden;
