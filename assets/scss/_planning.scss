@@ -1,8 +1,8 @@
 .planning {
     font-size: 1vmin;
     .time {
-        height: 2vw;
-        font-size: 2vmin;
+        height: 80px;
+        font-size: $xtra-small-font-size;
     }
     .head {
         height:3vw;
@@ -11,12 +11,37 @@
         background-color: $secondary-transparent;
     }
     .fs-2{
-        font-size: 2vmin;
+        font-size: 2.5em;
+    }
+    .day{
+        position: relative;
+        width: 20%;
+    }
+    #lundi{
+        order: 1;
+    }
+    #mardi{
+        order: 2;
+    }
+    #mercredi{
+        order: 3;
+    }
+    #jeudi{
+        order: 4;
+    }
+    #vendredi{
+        order: 5;
+    }
+    #samedi{
+        order: 6;
+    }
+    #dimanche{
+        order: 7;
     }
     .cours_planning {
         z-index:5;
-        width: calc(100% - 10px);
-        border-radius: 2px;
+        //border-radius: 2px;
+        border: solid 1px $secondary;
         background-color: $primary;
         color: $secondary;
     }
@@ -37,11 +62,11 @@
         border-top-color: $primary;
         width: 1100%;
     }
-    .extends-r {
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top-color: $primary;
-    }
+    //.extends-r {
+    //    border-top-style: solid;
+    //    border-top-width: 1px;
+    //    border-top-color: $primary;
+    //}
     a {
         color: $secondary;
     }

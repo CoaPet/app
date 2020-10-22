@@ -26,6 +26,13 @@ class TeamTrainingController extends AbstractController
             ->getRepository(Planning::class)
             ->findAll();
 
+        $cours = [];
+        foreach ($visualPlanning as $lesson) {
+            $lesson = new planning;
+            $cours[$lesson->getDay()][] = $lesson;
+        }
+
+
         $coachInfo = $this->getDoctrine()
             ->getRepository(InfoCoach::class)
             ->findOneBy([]);
@@ -42,6 +49,7 @@ class TeamTrainingController extends AbstractController
             'visualPlanning' => $visualPlanning,
             'hours' => $dataPlanning::HOURS,
             'days' => $dataPlanning::DAYS,
+            'test'=> $cours,
         ]);
     }
 }
