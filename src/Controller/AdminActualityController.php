@@ -25,7 +25,14 @@ class AdminActualityController extends AbstractController
         Request $request,
         PaginatorInterface $paginator
     ): Response {
-        $articles = $actualityRepository->findBy([], ['date' => 'DESC']);
+        if (isset($_GET['field']) && isset($_GET['order'])) {
+            $field = $_GET['field'];
+            $order= $_GET['order'];
+        } else {
+            $field = 'date';
+            $order= 'DESC';
+        }
+        $articles = $actualityRepository->findBy([], [$field => $order]);
         $pageArticles = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1),
@@ -34,6 +41,8 @@ class AdminActualityController extends AbstractController
 
         return $this->render('admin_actuality/index.html.twig', [
             'actualities' => $pageArticles,
+            'sortField' => $field,
+            'sortOrder' => $order,
         ]);
     }
 

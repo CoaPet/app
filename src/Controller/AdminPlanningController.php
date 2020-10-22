@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Planning;
 use App\Form\PlanningType;
 use App\Repository\PlanningRepository;
+use Doctrine\ORM\Mapping\OrderBy;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,10 +22,18 @@ class AdminPlanningController extends AbstractController
     public function index(PlanningRepository $planningRepository): Response
     {
         $dataPlanning = new Planning();
+
+        $allLessons = $planningRepository->findBy([], ['hour' => 'ASC']);
+        $cours = [];
+        foreach ($allLessons as $lesson) {
+            $cours[$lesson->getDay()][$lesson->getHour()] = $lesson;
+        }
+
         return $this->render('admin_planning/index.html.twig', [
             'visualPlanning' => $planningRepository->findAll(),
             'hours' => $dataPlanning::HOURS,
             'days' => $dataPlanning::DAYS,
+            'cours'=> $cours,
         ]);
     }
 
@@ -38,6 +47,12 @@ class AdminPlanningController extends AbstractController
         $visualPlanning = $this->getDoctrine()
             ->getRepository(Planning::class)
             ->findAll();
+
+        $cours = [];
+        foreach ($visualPlanning as $lesson) {
+            $lesson = new planning;
+            $cours[$lesson->getDay()][] = $lesson;
+        }
 
         $planning = new Planning();
         $form = $this->createForm(PlanningType::class, $planning);
@@ -57,6 +72,7 @@ class AdminPlanningController extends AbstractController
             'visualPlanning' => $visualPlanning,
             'hours' => $dataPlanning::HOURS,
             'days' => $dataPlanning::DAYS,
+            'cours'=> $cours,
         ]);
     }
 
