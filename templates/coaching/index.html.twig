@@ -30,8 +30,8 @@
                         </div>
                         <div class="nav-font small-font-size">
                             <p class="mb-1">{{ activity.description|raw }}</p>
-                            {% if activity.more %}
-                                <p class="my-0 mb-1 nav-font-semi-bold">Le mot du coach : <span class="flashy">{{ activity.more ?? '' }}</span></p>
+                            {% if activity.coachsentence %}
+                                <p class="my-0 mb-1 nav-font-semi-bold">Le mot du coach : <span class="flashy">{{ activity.coachsentence ?? '' }}</span></p>
                             {% endif %}
                         </div>
                     </div>
