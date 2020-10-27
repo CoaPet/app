@@ -19,7 +19,7 @@
     {{ form_widget(form.title) }}
 </div>
 
-<div class="change d-none team distance form-group col-4 offset-4 text-primary text-center">
+<div class="change team distance form-group col-4 offset-4 text-primary text-center">
     <div class="h5">
         {{ form_label(form.intensity, 'Intensité du cours') }}
         <div class="text-danger">
@@ -29,7 +29,7 @@
     {{ form_widget(form.intensity) }}
 </div>
 
-<div class="change d-none team form-group col-4 offset-4 text-primary text-center">
+<div class="change team form-group col-4 offset-4 text-primary text-center">
     <div class="h5">
         {{ form_label(form.maxparticipation, 'Nombre de participant maximum') }}
         <div class="text-danger">
@@ -39,7 +39,7 @@
     {{ form_widget(form.maxparticipation) }}
 </div>
 
-<div class="change d-none team distance form-group col-4 offset-4 text-primary text-center">
+<div class="change team distance form-group col-4 offset-4 text-primary text-center">
     <div class="h5">
         {{ form_label(form.more, 'Le +') }}
         <div class="text-danger">
@@ -104,3 +104,18 @@
     <button class="btn btn-primary m-2">{{ button_label|default('Enregistrer') }}</button>
 </div>
 {{ form_end(form) }}
+
+
+{#script pour afficher les champs en fonction du type d'activité, tous n'étend pas nécessaires#}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var activity = document.getElementById('form_activity').activity_category.value;
+    $('.change').addClass('d-none');
+    $('.'+activity).removeClass('d-none');
+
+    document.getElementById('form_activity').activity_category.onchange = function() {
+        var activity = this.value;
+        $('.change').addClass('d-none');
+        $('.'+activity).removeClass('d-none');
+    };
+</script>

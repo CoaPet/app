@@ -13,12 +13,4 @@
     </svg>
     Retour
 </a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        document.getElementById('form_activity').activity_category.onchange = function() {
-            var activity = this.value;
-            $('.change').addClass('d-none');
-            $('.'+activity).removeClass('d-none');
-        };
-    </script>
 {% endblock %}
