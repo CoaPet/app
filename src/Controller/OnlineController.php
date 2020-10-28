@@ -85,8 +85,7 @@ class OnlineController extends AbstractController
         }
         if (isset($_POST['price']) && !empty($_POST['price'])) {
             \Stripe\Stripe::setApiKey(
-                'sk_test_51HgtAsH1Hak7MvFLNMkz5n6wwHQumpauzaykQn5BZeC
-                8HhKqVZi5JM8uVxvf98U4XhyfF4tHHP0hgyM2iDLXP1db00izhGVYlT'
+                'sk_test_51HgtAsH1Hak7MvFLNMkz5n6wwHQumpauzaykQn5BZeC8HhKqVZi5JM8uVxvf98U4XhyfF4tHHP0hgyM2iDLXP1db00izhGVYlT'
             );
             $intent = \Stripe\PaymentIntent::create([
                 'amount' => $price,
@@ -106,7 +105,6 @@ class OnlineController extends AbstractController
         $program = $this->getDoctrine()
             ->getRepository(Program::class)
             ->findOneBy(['id'=>$_GET['prog']]);
-        dd($program);
         $duration = $program->getDuration();
 
         $begin = new DateTime();
