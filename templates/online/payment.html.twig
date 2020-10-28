@@ -1,0 +1,105 @@
+{% extends 'base_user.html.twig' %}
+
+{% block title %}Programmes en ligne{% endblock %}
+
+{% block body %}
+<div class="intro nav-font small-font-size text-center bg-white">
+    <section>
+    <p>Expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum,</p>
+
+
+    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat</p>
+
+
+    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
+    </section>
+</div>
+<section id="payment">
+
+    <form method="post">
+        <div id="errors"></div><!-- Messages d'erreur de paiement -->
+        <input type="text" id="cardHolder-name" placeholder="Titulaire de la carte">
+    <div id="card-elements"></div><!-- contient formulaire de saisie des infos cartes -->
+        <div id="card-errors" role="alert"></div><!-- Contint les erreurs liées à la carte -->
+        <button id="card-button" type="button" data-secret="{{ intent.client_secret }}">Procéder au paiement</button>
+    </form>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        window.onload = () => {
+            let stripe = Stripe('pk_test_51HgtAsH1Hak7MvFLXkL8rHt6SbJgfCHb2Wo7FSQANTw4TO6xW4qTNG87NUSOcTIWfV2oY6PipcnPvI2K1Z1pYOP700GqucAFXX')
+            let elements = stripe.elements()
+            let redirect = "/online/suscrib?prog={{ program.id }}"
+
+            let cardHolderName = document.getElementById("cardHolder-name")
+            let cardButton = document.getElementById("card-button")
+            let clientSecret = cardButton.dataset.secret;
+
+            let card = elements.create("card")
+            card.mount("#card-elements")
+
+            // gestion de la saisie
+            card.addEventListener("change", (event) => {
+                let displayError = document.getElementById("card-errors")
+                if(event.error){
+                    displayError.textContent = event.error.message;
+                }else{
+                    displayError.textContent = "";
+                }
+            })
+
+            // Gestion du paiement
+            cardButton.addEventListener("click", () => {
+                stripe.handleCardPayment(
+                    clientSecret, card, {
+                        payment_method_data: {
+                            billing_details: {name: cardHolderName.value}
+                        }
+                    }
+                ).then((result) => {
+                    if(result.error){
+                        document.getElementById("errors").innetText = result.error.message
+                    }else{
+                        document.location.href = redirect
+                    }
+                })
+            })
+
+        }
+    </script>
+</section>
+{#<div class="row text-light bg-primary py-4 h-100">#}
+{#    <div id="biodyxpert" class="col-4 text-right">#}
+{#        <div class="position-absolute w-100 text-right px-5">#}
+{#            <img class="mt-4" src="{{ asset('build/biodyxpert.png') }}" alt="biodyXpert"/>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="col-5 text-left small-14-font-size nav-font">#}
+{#        <p class="nav-font-bold">BIODY EXPERT</p>#}
+{#        <p>Rum, nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus#}
+{#        parium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat rum.</p>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="bg-white text-center py-4">#}
+{#    <p class="py-5 mb-0 main-font-bold medium-font-size">LES ÉTAPES DES PROGRAMMES EN LIGNE</p>#}
+{#</div>#}
+{#<div class="w-100 bg-white py-3 mb-0">#}
+{#{% include 'time.html.twig' %}#}
+{#</div>#}
+{#<div class="py-5 br-light text-center bg-white">#}
+{#    <a class="btn border-primary text-primary nav-font-semi-bold small-14-font-size"  href="{{ path('app_login') }}">S'INSCRIRE</a>#}
+{#</div>#}
+
+
+{% include 'map.html.twig' %}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>#}
+{#    <script>#}
+{#        document.getElementById('form_program').select_program.onchange = function() {#}
+{#            var iddiv = this.value;#}
+{#            $('.prog').removeClass('opa1');#}
+{#            $('.prog').addClass('disparition');#}
+{#            $('#'+iddiv).removeClass('disparition');#}
+{#            $('#'+iddiv).addClass('opa1');#}
+{#        };#}
+{#    </script>#}
+{% endblock %}
