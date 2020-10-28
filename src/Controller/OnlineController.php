@@ -64,18 +64,49 @@ class OnlineController extends AbstractController
     }
 
     /**
-     * @Route("/online/suscrib", name="app_online_suscrib", methods={"POST"})
+     * @Route("/online/suscrib", name="app_online_suscrib", methods={"POST", "GET"})
      */
     public function suscrib(Request $request) : Response
     {
+        $coachInfo = $this->getDoctrine()
+            ->getRepository(InfoCoach::class)
+            ->findOneBy([]);
+
         $user = $this->getUser();
         $attended = new Attended();
+        $price = 0;
+        $program = 0;
+        if (isset($_POST['select_program']) && !empty($_POST['select_program'])) {
+            /** @var Program $program */
+            $program = $this->getDoctrine()
+                ->getRepository(Program::class)
+                ->findOneBy(['id' => $_POST['select_program']]);
+            $price = ($program->getPrice() * 100);
+        }
+        if (isset($_POST['price']) && !empty($_POST['price'])) {
+            \Stripe\Stripe::setApiKey(
+                'sk_test_51HgtAsH1Hak7MvFLNMkz5n6wwHQumpauzaykQn5BZeC
+                8HhKqVZi5JM8uVxvf98U4XhyfF4tHHP0hgyM2iDLXP1db00izhGVYlT'
+            );
+            $intent = \Stripe\PaymentIntent::create([
+                'amount' => $price,
+                'currency' => 'eur'
+            ]);
+            return $this->render('online/payment.html.twig', [
+                'etapes' => Timeline::ONLINE,
+                'coachInfo' => $coachInfo,
+                'title' => 'Programmes en ligne',
+                'underTitle' => 'Retrouvez la forme, en toute autonomie',
+                'intent' => $intent,
+                'program' => $program,
+            ]);
+        }
 
-        /** @var Program $program */
+        /**  @var Program $program */
         $program = $this->getDoctrine()
             ->getRepository(Program::class)
-            ->findOneBy(['id'=>$_POST['select_program']]);
-
+            ->findOneBy(['id'=>$_GET['prog']]);
+        dd($program);
         $duration = $program->getDuration();
 
         $begin = new DateTime();
