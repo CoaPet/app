@@ -42,15 +42,15 @@ RUN docker-php-ext-enable mcrypt
 # Install extensions
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp
 RUN docker-php-ext-install -j$(nproc) gd
-RUN docker-php-ext-install pdo_mysql 
-RUN docker-php-ext-install mbstring 
-RUN docker-php-ext-install zip 
-RUN docker-php-ext-install exif 
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install exif
 RUN docker-php-ext-install pcntl
 RUN docker-php-ext-install -j$(nproc) intl
 
 # Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --version=1.9.0 --install-dir=/usr/local/bin --filename=composer
 
 # Copy composer.lock and composer.json
 #COPY ./composer.lock ./composer.json /var/www/
@@ -68,7 +68,7 @@ RUN nodejs -v
 RUN npm -v
 RUN yarn install --production=false
 RUN yarn encore production --verbose
-# RUN npm install --verbose 
+# RUN npm install --verbose
 # RUN npm run build --production --verbose
 
 
