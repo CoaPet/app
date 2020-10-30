@@ -1,0 +1,14 @@
+#payment {
+    width: 450px;
+    margin: 0 auto 20px auto;
+    border-radius: 3px;
+    padding: 10px;
+    border: solid 1px $primary;
+    #card-elements{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        input{
+            border: solid 1px $primary!important;
+        }
+    }
+}

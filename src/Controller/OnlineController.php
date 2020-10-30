@@ -117,6 +117,7 @@ class OnlineController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($attended);
         $entityManager->flush();
+        $this->addFlash('success', 'Votre paiement est bien validé.');
         $this->addFlash('success', 'Votre adhésion est bien validée. Vous pouvez accéder à vos ressource
         dans votre espace Membre (accessible par votre profil) !');
 

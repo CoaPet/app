@@ -47,7 +47,6 @@ class ContactController extends AbstractController
         }
 
         $_SESSION['captcha'] = mt_rand(1000, 9999);
-
         return $this->render('contact/contact.html.twig', [
             'coachInfo' => $coachInfo,
             'form' => $form->createView(),
