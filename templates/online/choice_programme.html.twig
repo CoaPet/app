@@ -6,12 +6,6 @@
 <div class="intro nav-font small-font-size text-center bg-white">
     <section>
     <p>Expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum,</p>
-
-
-    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locat</p>
-
-
-    <p>nondum tubarum cessante clangore vel milite locatPost emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas</p>
     </section>
 </div>
 <section id="coaching">
@@ -33,7 +27,7 @@
             {% for program in programs %}
             <div id="{{ program.id }}" class="prog disparition">
                 <span class="title">{{ program.name }}</span><br/><span class="undertitle
-">{{ program.price ?? '?' }} €</span><br>
+">{{ program.price ?? '?' }} € - durée : {{ program.duration }} jours</span><br>
                 {% for step in program.programSteps %}
                 <span class="undertitle">{{ loop.index }}. {{ step.title }}</span><br>
                     <span class="text">{{ step.description|raw }}</span>
